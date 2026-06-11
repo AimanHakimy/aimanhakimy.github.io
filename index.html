@@ -137,9 +137,8 @@
     .x { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); color: var(--text); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
     .x:hover { border-color: var(--accent); color: var(--accent); }
     
-    /* Dedicated Style for Embedded Screenshot Rendering */
     .project-image-view {
-      width: 100%; height: auto; max-height: 360px; border: 1px solid var(--line);
+      width: 100%; height: auto; max-height: 340px; border: 1px solid var(--line);
       border-radius: 8px; margin-bottom: 20px; display: none; overflow: hidden;
       background: #000;
     }
@@ -177,6 +176,7 @@
         <a href="#about">About</a>
         <a href="#skills">Skills Assessment</a>
         <a href="#projects">Project Gallery</a>
+        <a href="#reflection">Personal Reflection</a>
         <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
       </div>
     </nav>
@@ -371,24 +371,43 @@
     <section id="reflection" class="section">
       <h2>💭 Personal Reflection</h2>
       <div class="panel" style="padding:24px">
+        
         <div class="accordion open">
-          <button onclick="toggleAcc(this)">Why do you want to work for your chosen company and what value can you bring? <span>+</span></button>
+          <button onclick="toggleAcc(this)">Why do you want to work for your chosen company (LGMS Berhad)? <span>+</span></button>
           <div class="acc-body">
-            <p>Project work has systematically improved my ability to plan, design, test, and refine digital artifacts while connecting classroom theories with practical development tasks. Bringing this structural mindset to a company lets me bridge creative design and functional system development, ensuring engineered products remain engaging and secure.</p>
+            <p>I want to build my career at <strong>LGMS Berhad</strong> because it stands as Malaysia's premier world-class cybersecurity specialized firm, globally certified for penetration testing and digital defense auditing. My academic background in Media Informatics directly interfaces with frontend mechanics and client runtimes—areas that are highly targeted by web exploit threats. Working at LGMS would allow me to embed myself with premier cybersecurity experts and apply my programming logic to protect their clients' high-value digital asset application layers.</p>
           </div>
         </div>
+
+        <div class="accordion">
+          <button onclick="toggleAcc(this)">What value can you bring to this company? <span>+</span></button>
+          <div class="acc-body">
+            <p>I bring a highly specialized combination of 3D application development skills and client-side sanitization knowledge. Most traditional security analysts look strictly at system ports and infrastructure, missing bugs embedded inside multi-layered frontend interfaces or game engines. With my mastery over Unity engine data logic and input verification mechanics, I bring the rare value of a programmer who knows how to debug interactive code architectures and lock down entry fields before compilation ever occurs.</p>
+          </div>
+        </div>
+
         <div class="accordion">
           <button onclick="toggleAcc(this)">What skills make you suitable for this job? <span>+</span></button>
           <div class="acc-body">
-            <p>My academic background directly combines technology, design, communication, and user experience. Because I recognize that a great digital product must function correctly, look appealing, and protect data, I bring a well-rounded approach to building and vetting customer-facing digital applications.</p>
+            <p>My core suitability sits at the intersection of <strong>3D Application Dev (Unity/C#)</strong>, <strong>UI/UX Verification Usability Auditing</strong>, and <strong>Defensive Frontend Engineering</strong>. My course project architectures (like the TRaDC AR engine or secure login patterns) prove that I can construct interactive systems while concurrently hardcoding input sanitization matrices, parameter filters, and robust regular expression mechanisms into client data workflows.</p>
           </div>
         </div>
+
         <div class="accordion">
-          <button onclick="toggleAcc(this)">Why would a company choose to hire you? <span>+</span></button>
+          <button onclick="toggleAcc(this)">What are your strengths and weaknesses? <span>+</span></button>
           <div class="acc-body">
-            <p>Unlike traditional developers who focus entirely on system logic or designers who focus solely on interface aesthetics, I target the intersection of both fields. I configure clean interfaces, maintain clear communication across project teams, and apply continuous iterative updates to elevate software usability and user safety.</p>
+            <p><strong>Strengths:</strong> Highly disciplined logic structure debugging, professional competency in human-computer interaction flow analysis, and a strict baseline practice of implementing data input controls directly into development scripts.</p>
+            <p><strong>Weaknesses:</strong> My initial experience with physical hardware and infrastructure architecture routing setups was largely theoretical. However, I am systematically neutralizing this knowledge gap through active, hands-on network simulation tracking labs within my CSA30203 coursework, analyzing network encapsulation layers and IP subnet distributions.</p>
           </div>
         </div>
+
+        <div class="accordion">
+          <button onclick="toggleAcc(this)">Why should this company choose to hire you over others? <span>+</span></button>
+          <div class="acc-body">
+            <p>LGMS Berhad should hire me because I eliminate the friction between feature production and software hardening. Traditional developers construct software blindly without defensive foresight, requiring massive, expensive code rewrites down the pipeline. Conversely, I build secure frameworks by habit. I speak the language of immersive media interfaces, yet view every component through a protective lens—ensuring that systems are not only interactive and highly usable, but natively safe for end-users from the first line of code.</p>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
@@ -396,9 +415,7 @@
   <div class="modal" id="modal" onclick="closeModal(event)">
     <div class="modal-inner" onclick="event.stopPropagation()">
       <div class="modal-head"><div><h2 id="modalTitle">Project Specs</h2><p id="modalIntro" style="margin-top:4px;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
-      
       <div class="project-image-view" id="modalImageView"></div>
-
       <div id="modalBody"></div>
     </div>
   </div>
@@ -417,7 +434,7 @@ const projects = [
     skills:'Augmented Reality target mapping, low-poly geometry configuration, runtime logic events execution',
     evidence:'AR workspace screenshots, optimized model asset paths, script validation blocks',
     reflection:'Deployed interactive digital variants of traditional artifacts. Focused on keeping geometry boundaries small to prevent frame lag while keeping system variables stable during image identification layers.',
-    image: 'Screenshot 2026-01-15 110103.png'
+    image: 'tradc-ar.png'
   },
   {
     title:'Forgotten Island',
@@ -426,7 +443,7 @@ const projects = [
     skills:'Spatial system optimization, interactive lighting arrays deployment, camera control setups',
     evidence:'Scene tree blueprints, asset layout wireframes, runtime compilation logs',
     reflection:'Developed workflow parameters designed to stream environments fluidly. Audited mesh sizes and texture boundaries to verify performance constraints before packaging the standalone client deployment.',
-    image: 'Screenshot 2026-06-11 142943.png'
+    image: 'forgotten-island.png'
   },
   {
     title:'Data Communication Model Mapping',
@@ -444,7 +461,7 @@ const projects = [
     skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',
     evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',
     reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.',
-    image: 'login.png'
+    image: 'secure-login.png'
   }
 ];
 
