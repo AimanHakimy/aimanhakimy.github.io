@@ -70,7 +70,6 @@
     }
     .links a:hover, .btn:hover { border-color: var(--accent); background: rgba(59, 130, 246, 0.04); }
     
-    /* Reconfigured Hero to single column alignment */
     .hero {
       max-width: 1200px; margin: 0 auto; padding: 60px 24px 40px;
       display: flex; flex-direction: column; align-items: flex-start; gap: 24px;
@@ -81,7 +80,7 @@
     h3 { margin: 0 0 8px; font-size: 1.1rem; font-weight: 650; }
     p { margin: 0 0 16px; color: var(--muted); font-size: 0.98rem; }
     
-    /* Inline aligned target role row */
+    /* Inline aligned target role panel row with profile block */
     .inline-role-panel {
       width: 100%; display: flex; align-items: center; gap: 20px; padding: 20px; 
       background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
@@ -192,12 +191,14 @@
     <section class="hero">
       <div class="badge">● Course: CSA30203 Special Topics in Computer Network Security</div>
       <h1>Muhammad Aiman Hakimy Bin Azmi</h1>
-      <p style="font-size:1.1rem; max-width:820px; color: var(--muted); margin-bottom: 8px;">
-      <p>I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.
-      My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.
-      I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.</p>
-    </p>
+      <p style="font-size:1.1rem; max-width:820px; color: var(--muted); margin-bottom: 4px;">
+        I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.
+        My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.
+        I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.
+      </p>
+
       <div class="inline-role-panel">
+        <div class="avatar-mini">MA</div>
         <div class="role-details">
           <div class="role-title-group">
             <h3>Target Career Role</h3>
@@ -210,12 +211,32 @@
           </div>
         </div>
       </div>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View Source Artefacts</a>
+        <button class="btn" onclick="window.print()">Export Portfolio (PDF)</button>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="grid cols-2">
+        <div class="card">
+          <h2>About Me</h2>
+          <p>I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.</p>
+          <p>This portfolio presents selected academic works that show how technical, creative, and communication skills can be integrated to produce meaningful digital solutions for education, business, and community use.</p>
+        </div>
+        <div class="card">
+          <h2>Career Goal</h2>
+          <p>My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.</p>
+          <p>I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.</p>
+        </div>
+      </div>
     </section>
 
     <section id="exploration" class="section">
       <h2>🔍 Career Exploration</h2>
       <div class="panel" style="padding:24px">
-        <h3>1.Software Developer (Security-focused)</h3>
+        <h3>1. Software Developer (Security-focused)</h3>
         <p style="margin-bottom: 20px;">Positioning application engineering workflows at the front line of software perimeter and internal code layer defenses.</p>
         
         <div class="grid cols-2" style="margin-bottom: 20px;">
@@ -257,9 +278,9 @@
         <div class="grid cols-2">
           <div class="card">
             <h3>Technical Metrics</h3>
-            <div class="skill"><div class="skill-top"><span>HTML, CSS, JavaScript</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Responsive Web Development</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Database Design</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Unity & 3D Application Dev</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Security-Focused Software Developer</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>UI/UX Usability Verification</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
             <div class="skill"><div class="skill-top"><span>Basic Network Security</span><span>68%</span></div><div class="bar"><div class="fill" data-w="68%"></div></div></div>
           </div>
           <div class="card">
