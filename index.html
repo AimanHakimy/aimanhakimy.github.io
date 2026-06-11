@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aiman Hakimy | Secure Developer e-Portfolio</title>
+  <title>Aiman Hakimy | Secure Software Developer Portfolio</title>
   <style>
     :root {
-      --bg: #030712;
-      --panel: #0b1329;
-      --panel2: #111c44;
-      --text: #f3f4f6;
+      --bg: #070202;
+      --panel: #130a0a;
+      --panel2: #1c0e0e;
+      --text: #f9fafb;
       --muted: #9ca3af;
-      --accent: #10b981; /* Security Green */
-      --accent2: #06b6d4; /* DevSecOps Cyan */
+      --accent: #ef4444; /* Defensive Threat Crimson */
+      --accent2: #10b981; /* Validated Secure Green */
       --warning: #f59e0b;
-      --line: rgba(16, 185, 129, 0.15);
-      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      --radius: 16px;
+      --line: rgba(239, 68, 68, 0.15);
+      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      --radius: 12px;
     }
     [data-theme="light"] {
-      --bg: #f8fafc;
+      --bg: #fff5f5;
       --panel: #ffffff;
-      --panel2: #f1f5f9;
-      --text: #0f172a;
-      --muted: #64748b;
-      --accent: #059669;
-      --accent2: #0891b2;
+      --panel2: #fee2e2;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --accent: #dc2626;
+      --accent2: #059669;
       --warning: #d97706;
-      --line: rgba(15, 23, 42, 0.08);
+      --line: rgba(31, 41, 55, 0.08);
       --shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
     }
-    * { box-sizing: border-box; transition: all 0.25s ease; }
+    * { box-sizing: border-box; transition: all 0.2s ease; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background: 
-        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05), transparent 40rem),
-        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05), transparent 40rem),
+        radial-gradient(circle at 12% 15%, rgba(239, 68, 68, 0.07), transparent 45rem),
+        radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.06), transparent 45rem),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -46,106 +46,102 @@
     .topbar {
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(20px);
-      background: rgba(3, 7, 18, 0.75);
+      background: rgba(7, 2, 2, 0.8);
       border-bottom: 1px solid var(--line);
     }
-    [data-theme="light"] .topbar { background: rgba(248, 250, 252, 0.85); }
+    [data-theme="light"] .topbar { background: rgba(255, 245, 245, 0.85); }
     .nav {
       max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between;
       padding: 16px 24px; gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.5px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.1rem; letter-spacing: -0.3px; }
     .logo {
-      width: 38px; height: 38px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: grid; place-items: center; color: #030712; font-weight: 900;
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), #b91c1c);
+      display: grid; place-items: center; color: #fff; font-weight: 800;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
     }
     .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .links a, .btn {
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--text); padding: 8px 16px; border-radius: 8px;
+      background: rgba(255, 255, 255, 0.01);
+      color: var(--text); padding: 8px 16px; border-radius: 6px;
       font-weight: 600; font-size: 0.88rem; cursor: pointer;
     }
-    .links a:hover, .btn:hover { border-color: var(--accent2); background: rgba(6, 182, 212, 0.05); }
+    .links a:hover, .btn:hover { border-color: var(--accent); background: rgba(239, 68, 68, 0.04); }
     .hero {
       max-width: 1200px; margin: 0 auto; padding: 60px 24px 40px;
-      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;
+      display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: center;
     }
-    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--line); color: var(--accent); font-weight: 700; font-size: 0.8rem; padding: 6px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
-    h1 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.1; margin: 0 0 20px; letter-spacing: -1.5px; font-weight: 800; }
-    h2 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.5px; font-weight: 700; color: var(--text); position: relative; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(239, 68, 68, 0.1); border: 1px solid var(--line); color: var(--accent); font-weight: 700; font-size: 0.78rem; padding: 6px 12px; border-radius: 4px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+    h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); line-height: 1.1; margin: 0 0 20px; letter-spacing: -1px; font-weight: 800; }
+    h2 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 20px; font-weight: 750; color: var(--text); }
     h3 { margin: 0 0 8px; font-size: 1.1rem; font-weight: 650; }
     p { margin: 0 0 16px; color: var(--muted); font-size: 0.98rem; }
     .hero-card, .card, .panel {
       background: var(--panel);
       border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
     }
-    .hero-card { padding: 28px; position: relative; overflow: hidden; border-left: 4px solid var(--accent2); }
-    .profile { display: flex; gap: 20px; align-items: center; z-index: 1; position: relative; }
+    .hero-card { padding: 28px; border-top: 4px solid var(--accent); }
+    .profile { display: flex; gap: 20px; align-items: center; }
     .avatar {
-      width: 80px; height: 80px; border-radius: 16px; display: grid; place-items: center;
-      background: linear-gradient(135deg, #0f172a, #1e293b); border: 1px solid var(--line);
-      font-size: 2rem; font-weight: 800; color: var(--accent2);
+      width: 76px; height: 76px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, #2d1313, #130a0a); border: 1px solid var(--line);
+      font-size: 1.8rem; font-weight: 700; color: var(--accent);
     }
     .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
-    .chip { padding: 4px 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-size: 0.78rem; background: rgba(255, 255, 255, 0.01); }
+    .chip { padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); font-size: 0.75rem; background: rgba(255, 255, 255, 0.01); }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #030712; border: 0; font-weight: 700; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2); }
-    .btn.primary:hover { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); transform: translateY(-1px); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), #991b1b); color: #fff; border: 0; font-weight: 700; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2); }
+    .btn.primary:hover { box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3); transform: translateY(-1px); }
     .section { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
     .grid { display: grid; gap: 20px; }
     .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
     .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-    .card { padding: 24px; position: relative; overflow: hidden; }
-    .card:hover { border-color: var(--accent2); transform: translateY(-2px); }
-    .card .icon { font-size: 2.2rem; margin-bottom: 12px; display: block; }
+    .card { padding: 24px; }
+    .card:hover { border-color: var(--accent); }
+    .card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
     .mini { font-size: 0.84rem; color: var(--muted); }
     .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 24px; }
-    .stat { padding: 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--line); text-align: center; }
-    .stat b { display: block; font-size: 1.5rem; color: var(--accent); }
+    .stat { padding: 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--line); text-align: center; }
+    .stat b { display: block; font-size: 1.4rem; color: var(--accent); }
     .timeline { position: relative; margin-top: 15px; }
     .timeline:before { content: ""; position: absolute; left: 16px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
     .timeitem { position: relative; padding: 0 0 24px 44px; }
-    .dot { position: absolute; left: 8px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent2); box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15); }
-    .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; }
-    .tab { padding: 8px 16px; border-radius: 6px; border: 1px solid transparent; background: transparent; cursor: pointer; color: var(--muted); font-weight: 600; font-size: 0.92rem; }
+    .dot { position: absolute; left: 9px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15); }
+    .tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 24px; }
+    .tab { padding: 8px 16px; border-radius: 4px; border: 1px solid transparent; background: transparent; cursor: pointer; color: var(--muted); font-weight: 600; font-size: 0.9rem; }
     .tab:hover { color: var(--text); }
-    .tab.active { background: rgba(16, 185, 129, 0.1); border-color: var(--line); color: var(--accent); }
+    .tab.active { background: rgba(239, 68, 68, 0.08); border-color: var(--line); color: var(--accent); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .project-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .filter { padding: 8px 16px; border: 1px solid var(--line); background: transparent; border-radius: 6px; color: var(--muted); cursor: pointer; font-size: 0.88rem; }
-    .filter.active { border-color: var(--accent2); background: rgba(6, 182, 212, 0.08); color: var(--accent2); }
+    .filter { padding: 8px 16px; border: 1px solid var(--line); background: transparent; border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 0.86rem; }
+    .filter.active { border-color: var(--accent); background: rgba(239, 68, 68, 0.06); color: var(--accent); }
     .project-card { overflow: hidden; padding: 0; cursor: pointer; }
-    .project-cover { height: 140px; background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05)); display: grid; place-items: center; font-size: 3rem; border-bottom: 1px solid var(--line); }
+    .project-cover { height: 130px; background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(16, 185, 129, 0.03)); display: grid; place-items: center; font-size: 2.5rem; border-bottom: 1px solid var(--line); }
     .project-body { padding: 20px; }
-    .tag { display: inline-block; margin: 4px 4px 4px 0; font-size: 0.74rem; padding: 3px 8px; border-radius: 4px; background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.15); color: var(--accent2); font-weight: 600; }
+    .tag { display: inline-block; margin: 4px 4px 4px 0; font-size: 0.74rem; padding: 3px 8px; border-radius: 4px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.12); color: var(--accent); font-weight: 600; }
     .skill { margin: 16px 0; }
-    .skill-top { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.92rem; }
-    .bar { height: 8px; background: rgba(255, 255, 255, 0.03); border-radius: 4px; overflow: hidden; margin-top: 8px; border: 1px solid var(--line); }
-    .fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
-    .accordion { border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.01); }
-    .accordion button { width: 100%; text-align: left; background: transparent; color: var(--text); border: 0; padding: 18px; font-weight: 650; cursor: pointer; font-size: 1.02rem; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-    .accordion button:hover { background: rgba(255, 255, 255, 0.01); }
-    .acc-body { display: none; padding: 0 18px 18px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid rgba(16, 185, 129, 0.05); padding-top: 14px; }
+    .skill-top { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem; }
+    .bar { height: 8px; background: rgba(255, 255, 255, 0.02); border-radius: 4px; overflow: hidden; margin-top: 8px; border: 1px solid var(--line); }
+    .fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width 1s ease-in-out; }
+    .accordion { border: 1px solid var(--line); border-radius: 8px; margin-bottom: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.005); }
+    .accordion button { width: 100%; text-align: left; background: transparent; color: var(--text); border: 0; padding: 18px; font-weight: 650; cursor: pointer; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .accordion button:hover { background: rgba(239, 68, 68, 0.02); }
+    .acc-body { display: none; padding: 0 18px 18px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid rgba(239, 68, 68, 0.05); padding-top: 14px; }
     .accordion.open .acc-body { display: block; }
-    .checklist { display: grid; gap: 10px; }
-    .check { display: flex; gap: 14px; align-items: flex-start; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, 0.01); cursor: pointer; }
-    .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--accent); }
-    .modal { position: fixed; inset: 0; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(8px); z-index: 99; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal { position: fixed; inset: 0; background: rgba(7, 2, 2, 0.85); backdrop-filter: blur(8px); z-index: 99; display: none; align-items: center; justify-content: center; padding: 20px; }
     .modal.open { display: flex; }
-    .modal-inner { max-width: 800px; width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); padding: 28px; max-height: 88vh; overflow: auto; }
+    .modal-inner { max-width: 780px; width: 100%; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 24px; max-height: 88vh; overflow: auto; }
     .modal-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
-    .x { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); color: var(--text); border-radius: 8px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
-    .x:hover { border-color: var(--warning); color: var(--warning); }
-    table { width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; margin-top: 10px; }
-    th, td { text-align: left; padding: 14px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.92rem; }
-    th { color: var(--accent2); background: rgba(6, 182, 212, 0.06); font-weight: 650; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px; }
+    .x { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); color: var(--text); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
+    .x:hover { border-color: var(--accent); color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; border-radius: 6px; overflow: hidden; margin-top: 10px; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.9rem; }
+    th { color: var(--accent); background: rgba(239, 68, 68, 0.06); font-weight: 650; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px; }
     td { color: var(--muted); }
-    td strong { color: var(--text); }
-    .footer { padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); margin-top: 40px; font-size: 0.86rem; }
+    .footer { padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); margin-top: 40px; font-size: 0.84rem; }
     .print-note { display: none; }
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; padding-top: 30px; }
@@ -153,7 +149,7 @@
       .links { display: none; }
     }
     @media print {
-      .topbar, .hero-actions, .project-toolbar, .tabs, .modal, #checklist { display: none !important; }
+      .topbar, .hero-actions, .project-toolbar, .tabs, .modal { display: none !important; }
       body { background: white; color: #111; }
       .card, .hero-card, .panel { box-shadow: none; border: 1px solid #ccc; background: white; margin-bottom: 20px; page-break-inside: avoid; }
       .tab-content { display: block !important; }
@@ -168,12 +164,11 @@
 <body data-theme="dark">
   <header class="topbar">
     <nav class="nav">
-      <a href="#home" class="brand"><span class="logo">AH</span><span>Aiman e-Portfolio // DevSecOps</span></a>
+      <a href="#home" class="brand"><span class="logo">AH</span><span>Aiman Hakimy // Secure Software e-Portfolio</span></a>
       <div class="links">
         <a href="#about">About</a>
-        <a href="#skills">Skills Profile</a>
+        <a href="#skills">Skills Assessment</a>
         <a href="#projects">Project Gallery</a>
-        <a href="#reflection">Reflections</a>
         <a href="#readiness">Readiness Plan</a>
         <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
       </div>
@@ -183,32 +178,31 @@
   <main id="home">
     <section class="hero">
       <div>
-        <div class="badge">● CSA30203 Network Security Portfolio</div>
-        <h1>Muhammad Aiman Hakimy Bin Azmi</h1>
+        <div class="badge">● Course: CSA30203 Special Topics in Computer Network Security</div>
+        <h1>Individual E-Portfolio (20%)</h1>
         <p style="font-size:1.1rem; max-width:760px; color: var(--muted);">
-          Information Technology student at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong> specializing in <strong>Media Informatics</strong>. Architecting creative digital platforms engineered with secure software practices and robust application defensive mechanics.
+          Personal Career Development Portfolio engineered by <strong>Muhammad Aiman Hakimy Bin Azmi</strong>. Structuring multi-layered secure application frameworks built on a foundation of Media Informatics and modern system defenses.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore Source Artefacts</a>
-          <button class="btn" onclick="window.print()">Generate Verification PDF</button>
-          <a class="btn" href="#checklist">Requirements Checklist</a>
+          <a class="btn primary" href="#projects">View Source Artefacts</a>
+          <button class="btn" onclick="window.print()">Export Portfolio (PDF)</button>
         </div>
       </div>
       <aside class="hero-card">
         <div class="profile">
           <div class="avatar">MA</div>
           <div>
-            <h3>Target Engineering Role</h3>
-            <p style="margin-bottom:6px;">Software Developer (Security-Focused)</p>
+            <h3>Target Career Role</h3>
+            <p style="color: var(--accent); font-weight: 700; margin-bottom:4px;">Software Developer (Security-focused)</p>
             <div class="chips">
-              <span class="chip">Unity & Vuforia AR</span><span class="chip">Secure Code Frameworks</span><span class="chip">3D Asset Security</span><span class="chip">UI/UX Testing</span>
+              <span class="chip">AppSec Auditing</span><span class="chip">Input Hardening</span><span class="chip">UI/UX Verification</span><span class="chip">Secure Web Dev</span>
             </div>
           </div>
         </div>
         <div class="stat-row">
-          <div class="stat"><b>6</b><span class="mini">Validated Artefacts</span></div>
+          <div class="stat"><b>6</b><span class="mini">Gallery Projects</span></div>
           <div class="stat"><b>1</b><span class="mini">Target Role</span></div>
-          <div class="stat"><b>8</b><span class="mini">Core Core Competencies</span></div>
+          <div class="stat"><b>82%</b><span class="mini">Top Tech Skill</span></div>
           <div class="stat"><b>20%</b><span class="mini">Weightage</span></div>
         </div>
       </aside>
@@ -218,54 +212,75 @@
       <div class="grid cols-2">
         <div class="card">
           <h2>About Me</h2>
-          <p>I specialize in the synthesis of high-fidelity interactive media design and modern application security parameters. My background centers on constructing highly engaging systems—ranging from data visualization engines to complex automated web environments—while anchoring development in privacy-by-design principles.</p>
-          <p>This portfolio demonstrates how my specialized competencies in asset composition, human-computer interaction, and technical problem-solving converge to build secure applications that protect structural system boundaries and customer identity parameters.</p>
+          <p>I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.</p>
+          <p>This portfolio presents selected academic works that show how technical, creative, and communication skills can be integrated to produce meaningful digital solutions for education, business, and community use.</p>
         </div>
         <div class="card">
-          <h2>Strategic Positioning</h2>
-          <p>My technical trajectory targets the modern software development pipeline. Rather than separating application architecture from peripheral perimeter defenses, I focus on engineering secure configurations into active code matrices during early development cycles.</p>
-          <p>By executing proactive input handling, sanitization practices, and structured accessibility testing, I ensure system payloads remain accessible, scalable, and highly resilient against attack vectors.</p>
+          <h2>Career Goal</h2>
+          <p>My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.</p>
+          <p>I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Academic Journey Timeline</h2>
+    <section id="exploration" class="section">
+      <h2>🔍 Section 1: Career Exploration (Understanding the Field)</h2>
       <div class="panel" style="padding:24px">
-        <div class="timeline">
-          <div class="timeitem"><span class="dot"></span><h3>Year 1: IT Core Foundations</h3><p>Acquired core foundations in discrete program logic, structural logic design, database normalization architectures, and fundamental communication system principles.</p></div>
-          <div class="timeitem"><span class="dot"></span><h3>Year 2: Interactive Systems & Production Pipelines</h3><p>Engineered responsive web architectures, designed complex relational data matrices, mastered 3D asset modeling pipelines, and deployed interactive digital front-ends built on rigorous UX standards.</p></div>
-          <div class="timeitem"><span class="dot"></span><h3>Year 3: Defensive Engineering & Professional Practice</h3><p>Integrated application security logic, advanced data communication networking models, and access control mechanics into large group projects. Developed deep exposure to vulnerability assessments and usability verification metrics.</p></div>
-          <div class="timeitem"><span class="dot"></span><h3>Final Year: Capstone Systems Focus</h3><p>Executing high-fidelity technical proposals for secure interactive platforms, targeting modern client framework deployments integrated with secure backend validations.</p></div>
+        <h3>1. Selected Role: Software Developer (Security-focused)</h3>
+        <p style="margin-bottom: 20px;">Positioning application engineering workflows at the front line of software perimeter and internal code layer defenses.</p>
+        
+        <div class="grid cols-2" style="margin-bottom: 20px;">
+          <div class="card" style="background: rgba(255,255,255,0.01)">
+            <h4 style="color:var(--accent); margin-top:0;">Job Responsibilities:</h4>
+            <ul style="padding-left:20px; margin:0; color:var(--muted);">
+              <li style="margin-bottom:8px;">Reviewing application source code to identify and mitigate software bugs and flaws.</li>
+              <li style="margin-bottom:8px;">Integrating automated security tools directly into the development lifecycle.</li>
+              <li style="margin-bottom:8px;">Ensuring web and mobile digital platforms protect user identity through proper validation protocols.</li>
+              <li>Documenting system architecture vulnerabilities to optimize platform integrity.</li>
+            </ul>
+          </div>
+          <div class="card" style="background: rgba(255,255,255,0.01)">
+            <h4 style="color:var(--accent); margin-top:0;">Required Skills:</h4>
+            <ul style="padding-left:20px; margin:0; color:var(--muted);">
+              <li style="margin-bottom:8px;">Understanding secure web frameworks and modern development environments.</li>
+              <li style="margin-bottom:8px;">Core competency in web technologies, routing systems, and input filtering logic.</li>
+              <li>Practical understanding of security frameworks, privacy-by-design principles, and basic web vulnerability concepts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="background: rgba(255,255,255,0.01); margin-top: 20px;">
+          <h4 style="color:var(--accent2); margin-top:0;">Relevance to Modern Cybersecurity:</h4>
+          <p style="margin:0;">Digital media platforms continuously collect, display, and distribute information. Because modern systems face persistent security threats at the application layer, media technologists need a basic awareness of authentication, data privacy, safe communication, responsible content sharing, and secure web practices to ensure that deployments remain safe for end-users.</p>
         </div>
       </div>
     </section>
 
     <section id="skills" class="section">
-      <h2>Skills Profile</h2>
+      <h2>📊 Section 2: Personal Skills Assessment</h2>
       <div class="tabs">
-        <button class="tab active" onclick="openTab(event,'technical')">Technical Engineering</button>
-        <button class="tab" onclick="openTab(event,'media')">Media & Asset Synthesis</button>
-        <button class="tab" onclick="openTab(event,'soft')">Professional Competencies</button>
+        <button class="tab active" onclick="openTab(event,'technical')">Technical Competencies</button>
+        <button class="tab" onclick="openTab(event,'media')">Skills Profile & Matrix</button>
+        <button class="tab" onclick="openTab(event,'gap')">Skills Gap Analysis</button>
       </div>
       
       <div id="technical" class="tab-content active">
         <div class="grid cols-2">
           <div class="card">
-            <h3>Technical Competencies</h3>
-            <div class="skill"><div class="skill-top"><span>Client Scripting & Interface Engineering (HTML, CSS, JS)</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Secure Database Architecture & Relational Design</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Responsive Web Platform Architecture</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Application & Basic Network Security Mechanics</span><span>68%</span></div><div class="bar"><div class="fill" data-w="68%"></div></div></div>
+            <h3>Technical Metrics</h3>
+            <div class="skill"><div class="skill-top"><span>HTML, CSS, JavaScript</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Responsive Web Development</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Database Design</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Basic Network Security</span><span>68%</span></div><div class="bar"><div class="fill" data-w="68%"></div></div></div>
           </div>
           <div class="card">
-            <h3>Verified Technical Evidence Base</h3>
+            <h3>Core Skill Evidence</h3>
             <table>
-              <thead><tr><th>Skill Category</th><th>Documented System Evidence</th></tr></thead>
+              <thead><tr><th>Skill</th><th>Evidence Material</th></tr></thead>
               <tbody>
-                <tr><td><strong>Web Infrastructure</strong></td><td>Production-ready responsive microsites and input-validated interface frameworks.</td></tr>
-                <tr><td><strong>Database Integrity</strong></td><td>Entity Relationship Diagrams (ERD) with standardized index controls and SQL query security rules.</td></tr>
-                <tr><td><strong>Network Defense</strong></td><td>Secure topological mapping diagrams, access management configurations, and multi-factor conceptual frameworks.</td></tr>
+                <tr><td><strong>Web Development</strong></td><td>Responsive personal website and campaign microsite deployment.</td></tr>
+                <tr><td><strong>Database</strong></td><td>Entity relationship diagram and SQL table design layouts.</td></tr>
+                <tr><td><strong>Networking</strong></td><td>Secure basic network diagram and matching security awareness materials.</td></tr>
               </tbody>
             </table>
           </div>
@@ -274,84 +289,111 @@
 
       <div id="media" class="tab-content">
         <div class="grid cols-3">
-          <div class="card"><div class="icon">📐</div><h3>Advanced UI/UX Architecture</h3><p>Constructs highly analytical wireframes, optimized user task flows, and functional system prototypes evaluated via direct interactive usability testing modules.</p></div>
-          <div class="card"><div class="icon">🛡️</div><h3>Secure Media Asset Pipelines</h3><p>Optimizes 3D digital objects, secure asset streaming environments, and high-fidelity lighting matrices built using strict secure asset storage rules.</p></div>
-          <div class="card"><div class="icon">🎨</div><h3>Visual Communication Design</h3><p>Leverages complex typography hierarchies, proportional visual grids, and advanced vector asset structures using professional engineering software systems.</p></div>
+          <div class="card"><h3>Visual Design</h3><p>Uses layout, color, typography, and visual hierarchy to communicate ideas clearly.</p></div>
+          <div class="card"><h3>UI/UX Design</h3><p>Creates wireframes, user flows, and prototypes based on user needs and usability principles.</p></div>
+          <div class="card"><h3>Multimedia Production</h3><p>Produces posters, infographics, short videos, and learning materials for digital platforms.</p></div>
+          <div class="card"><h3>Communication</h3><p>Presents technical and creative work clearly to classmates, lecturers, and stakeholders.</p></div>
+          <div class="card"><h3>Teamwork</h3><p>Collaborates in group-based design and development activities with clear task distribution.</p></div>
+          <div class="card"><h3>Problem Solving</h3><p>Applies testing, feedback, and iteration to improve digital artifacts.</p></div>
         </div>
       </div>
 
-      <div id="soft" class="tab-content">
-        <div class="grid cols-3">
-          <div class="card"><div class="icon">💬</div><h3>Technical Communication</h3><p>Translates volatile architectural threat landscapes and application code bugs clearly to both technical engineers and business stakeholders.</p></div>
-          <div class="card"><div class="icon">👥</div><h3>Collaborative DevSecOps Teamwork</h3><p>Deploys clear technical task distributions across integrated group structures, coordinating structural dependencies across development teams.</p></div>
-          <div class="card"><div class="icon">🧩</div><h3>Analytical Problem Solving</h3><p>Executes deep code diagnostics, iterative debugging processes, and structured system refactoring loops based on functional client evaluations.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <h2>Academic Project Gallery</h2>
-      <p>Select any active project card to review the target tools, demonstrated engineering skills, architectural evidence, and secure software development reflections.</p>
-      <div class="project-toolbar">
-        <button class="filter active" onclick="filterProjects('all',event)">All Artefacts</button>
-        <button class="filter" onclick="filterProjects('ar-web',event)">AR & Web Engine</button>
-        <button class="filter" onclick="filterProjects('ux-design',event)">UI/UX Design</button>
-        <button class="filter" onclick="filterProjects('sec-dev',event)">Security & Network</button>
-        <button class="filter" onclick="filterProjects('analytics',event)">Media Analytics</button>
-      </div>
-      <div class="grid cols-3" id="projectGrid">
-        <article class="card project-card" data-cat="ar-web ux-design" onclick="showProject(0)"><div class="project-cover">🗺️</div><div class="project-body"><h3>TraDC AR Cultural Modernization</h3><p>Digital preservation platform using Unity and Vuforia Engine AR Image Targets for complex cultural game assets.</p><span class="tag">Unity</span><span class="tag">Vuforia AR</span><span class="tag">Blender</span></div></article>
-        <article class="card project-card" data-cat="ar-web ux-design" onclick="showProject(1)"><div class="project-cover">🎯</div><div class="project-body"><h3>2D Speed Math Adventure</h3><p>Gamified educational application built using strict client logic arrays to teach arithmetic mechanics dynamically.</p><span class="tag">Logic Arrays</span><span class="tag">HCI</span><span class="tag">Gamification</span></div></article>
-        <article class="card project-card" data-cat="sec-dev" onclick="showProject(2)"><div class="project-cover">🔒</div><div class="project-body"><h3>Secure Input Validation Login Interface</h3><p>Form-hardened interface structure enforcing client-side sanitization rules to block application threat matrices.</p><span class="tag">Input Hardening</span><span class="tag">AppSec</span><span class="tag">JS Validation</span></div></article>
-        <article class="card project-card" data-cat="sec-dev ux-design" onclick="showProject(3)"><div class="project-cover">📡</div><div class="project-body"><h3>Enterprise Networking Role Infrastructure</h3><p>Segmented infrastructure architectural routing blueprint designed with rigorous zero-trust network roles.</p><span class="tag">Network Topology</span><span class="tag">Zero Trust</span><span class="tag">Access Roles</span></div></article>
-        <article class="card project-card" data-cat="analytics" onclick="showProject(4)"><div class="project-cover">📈</div><div class="project-body"><h3>Kopi Pagi Platform Sales Analytics</h3><p>Data tracking pipeline extracting sales metrics and consumer conversions via automated digital monetization models.</p><span class="tag">Gumroad API</span><span class="tag">Data Analytics</span><span class="tag">BI Tracking</span></div></article>
-        <article class="card project-card" data-cat="sec-dev analytics" onclick="showProject(5)"><div class="project-cover">🛡️</div><div class="project-body"><h3>Cybersecurity Awareness System</h3><p>Interactive platform mapping social engineering vectors, credentials management safety, and enterprise privacy rules.</p><span class="tag">Threat Analysis</span><span class="tag">Privacy-by-Design</span><span class="tag">Media</span></div></article>
-      </div>
-    </section>
-
-    <section id="reflection" class="section">
-      <h2>Learning Reflections</h2>
-      <div class="accordion open"><button onclick="toggleAcc(this)">What core engineering principles have I mastered from Media Informatics? <span>+</span></button><div class="acc-body"><p>I have mastered the understanding that modern interactive applications exist as complex intersections of technology, interface layout, and runtime validation rules. A highly performant digital system must execute its runtime operations flawlessly while preserving continuous accessibility and protecting data flows against external client injections.</p></div></div>
-      <div class="accordion"><button onclick="toggleAcc(this)">How has system-level project work refined my technical abilities? <span>+</span></button><div class="acc-body"><p>Iterative code development forced me to transition from conceptual layouts to structural deployment loops. Working on large interactive modules taught me to test edge cases systematically, decouple application components for better scaling, and build out automated validation logic directly within client-side code matrices.</p></div></div>
-      <div class="accordion"><button onclick="toggleAcc(this)">Why is application-layer security critical for modern media technologies? <span>+</span></button><div class="acc-body"><p>Modern digital platforms are highly exposed endpoints that continuously process sensitive client identities, payment parameters, and custom access tokens. If data input pipelines lack defensive sanitation rules, malicious actors can exploit the visual layer to inject payloads. Security is an architecture that must be written cleanly directly into the source code.</p></div></div>
-      <div class="accordion"><button onclick="toggleAcc(this)">What is my active technical optimization roadmap? <span>+</span></button><div class="acc-body"><p>My optimization plan focuses on scaling JavaScript engine proficiency, introducing structured, metric-driven user accessibility diagnostics, mastering automated application security testing utilities, and formalizing clean, enterprise-grade project documentation routines.</p></div></div>
-    </section>
-
-    <section id="checklist" class="section">
-      <h2>Interactive Portfolio Audit Checklist</h2>
-      <p>Verify all assignment performance goals before final submission. The system progress tracker calculates overall completion metrics automatically.</p>
-      <div class="card">
-        <div class="skill"><div class="skill-top"><span>Academic Submission Progress Balance</span><span id="progressText">0%</span></div><div class="bar"><div class="fill" id="progressFill"></div></div></div>
-        <div class="checklist" style="margin-top:20px;">
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Verified Structural Profile</b><br><span class="mini">Includes student legal identity, target degree specialization data, and a clear career path statement.</span></span></label>
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Explicit Non-Generic Career Goal</b><br><span class="mini">Target roadmap explicitly customized around a secure software development role within application ecosystems.</span></span></label>
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Skill Alignment via Technical Evidence</b><br><span class="mini">All core technical and media design metrics are explicitly supported with verifiable project artifacts.</span></span></label>
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Minimum Core Project Artefacts</b><br><span class="mini">Gallery features deep architectural profiles including target tools, skills, and direct visual evidence links.</span></span></label>
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Honest Analytical Reflection</b><br><span class="mini">Self-evaluations accurately balance existing technical competencies against ongoing skills development.</span></span></label>
-          <label class="check"><input type="checkbox" onchange="updateProgress()"><span><b>Visual & Code Matrix Consistency</b><br><span class="mini">Layout maintains a precise design, dark-mode accessibility styling, and responsive viewport sizing parameters.</span></span></label>
+      <div id="gap" class="tab-content">
+        <div class="card">
+          <h3>Skills Gap Analysis Matrix</h3>
+          <table>
+            <thead>
+              <tr><th>Industry Requirement</th><th>My Current Status</th><th>Remediation Plan</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Secure Web Development</strong></td>
+                <td>Experience building functional web apps but need deeper knowledge of secure code testing.</td>
+                <td>Study secure coding guidelines, privacy-by-design mechanics, and common web vulnerability concepts.</td>
+              </tr>
+              <tr>
+                <td><strong>UI/UX Usability Testing</strong></td>
+                <td>Creating wireframes and interface prototypes in design tools.</td>
+                <td>Conduct structured usability testing with real users to gather functional feedback.</td>
+              </tr>
+              <tr>
+                <td><strong>Advanced Frameworks</strong></td>
+                <td>Proficient in standard client-side scripting and styles.</td>
+                <td>Build more interactive web applications using modern JavaScript frameworks.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <section id="readiness" class="section">
-      <h2>Career Readiness Statement</h2>
+      <h2>🗺️ Section 3: Career Development Plan</h2>
       <div class="grid cols-2">
         <div class="card">
-          <h3>Professional Positioning</h3>
-          <p>As an Information Technology student specializing in Media Informatics, I hold a unique technical position that balances client-side interactive asset compilation and secure development methodologies. My portfolio demonstrates actionable, hands-on proficiencies across frontend application design, database engineering, and basic secure application configurations.</p>
-          <p>I build systems that bridge the traditional gap between creative visual architecture and application defense. I ensure digital platforms remain engaging for consumers while maintaining high integrity against modern application exploit vectors.</p>
+          <h3>🛠️ Future Development Action Plan</h3>
+          <ul style="padding-left:20px; color:var(--muted);">
+            <li style="margin-bottom:12px;"><strong>Web Development:</strong> Build more interactive web applications using JavaScript frameworks.</li>
+            <li style="margin-bottom:12px;"><strong>UI/UX:</strong> Conduct structured usability testing with real users to evaluate interactive prototypes.</li>
+            <li style="margin-bottom:12px;"><strong>Cybersecurity:</strong> Learn secure coding, privacy-by-design, and basic web vulnerability concepts to strengthen platform defenses.</li>
+            <li><strong>Media Production:</strong> Improve storytelling, editing, and analytics-based content design across media pipelines.</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Future Technical Development Plan</h3>
-          <table>
-            <thead><tr><th>Target Capability Focus Area</th><th>Planned Technical Remediation Action</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Web Application Engineering</strong></td><td>Construct modular, state-driven user engines leveraging modern JavaScript development frameworks.</td></tr>
-              <tr><td><strong>Usability Verification</strong></td><td>Conduct structured, metric-driven usability diagnostics with real-world users to track interface performance.</td></tr>
-              <tr><td><strong>Defensive Development</strong></td><td>Implement advanced data privacy mechanics, secure input patterns, and automated source code testing hooks.</td></tr>
-              <tr><td><strong>Asset Pipeline Control</strong></td><td>Optimize high-fidelity asset rendering models and data analytics pipelines across production systems.</td></tr>
-            </tbody>
-          </table>
+          <h3>🗓️ Academic Journey Timeline</h3>
+          <div class="timeline">
+            <div class="timeitem"><span class="dot"></span><h4>Year 1: IT Foundation</h4><p class="mini">Developed foundational understanding in programming, computer systems, digital logic, databases, and basic multimedia concepts.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Year 2: Media and Application Development</h4><p class="mini">Built web pages, designed user interfaces, produced digital media content, and applied database concepts in small systems.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Year 3: Integration and Professional Practice</h4><p class="mini">Integrated media design, networking, cybersecurity awareness, project management, and user-centered evaluation into academic projects.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Final Year: Capstone Direction</h4><p class="mini">Prepared to propose a final-year project related to interactive learning media, secure web applications, or digital awareness platforms.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>📂 Section 4: Evidence of Learning</h2>
+      <h3>Academic Project Gallery</h3>
+      <p>Click an engineering card entry below to audit the structural deployment tools, skill validations, and security reflections.</p>
+      
+      <div class="project-toolbar">
+        <button class="filter active" onclick="filterProjects('all',event)">All Projects</button>
+        <button class="filter" onclick="filterProjects('web',event)">Web Platform</button>
+        <button class="filter" onclick="filterProjects('ux',event)">UI/UX Architecture</button>
+        <button class="filter" onclick="filterProjects('security',event)">Cyber Security</button>
+        <button class="filter" onclick="filterProjects('media',event)">Media Analytics</button>
+      </div>
+
+      <div class="grid cols-3" id="projectGrid">
+        <article class="card project-card" data-cat="web" onclick="showProject(0)"><div class="project-cover">🌐</div><div class="project-body"><h3>Personal Responsive Website</h3><p>A student branding website using HTML, CSS, and JavaScript.</p><span class="tag">Web</span><span class="tag">Responsive</span></div></article>
+        <article class="card project-card" data-cat="ux" onclick="showProject(1)"><div class="project-cover">📱</div><div class="project-body"><h3>UniEvent App Prototype</h3><p>A mobile app prototype for university event discovery.</p><span class="tag">Figma</span><span class="tag">UX</span></div></article>
+        <article class="card project-card" data-cat="security" onclick="showProject(2)"><div class="project-cover">🛡️</div><div class="project-body"><h3>Cybersecurity Awareness Campaign</h3><p>Digital campaign materials on phishing, passwords, and privacy.</p><span class="tag">Security</span><span class="tag">Media</span></div></article>
+        <article class="card project-card" data-cat="media" onclick="showProject(3)"><div class="project-cover">🎓</div><div class="project-body"><h3>Interactive Learning Material</h3><p>Multimedia learning content for basic networking concepts.</p><span class="tag">MSP</span><span class="tag">Learning</span></div></article>
+        <article class="card project-card" data-cat="web security" onclick="showProject(4)"><div class="project-cover">🔐</div><div class="project-body"><h3>Secure Login Interface</h3><p>A prototype login page with usability & security features.</p><span class="tag">Web</span><span class="tag">Security</span></div></article>
+        <article class="card project-card" data-cat="media" onclick="showProject(5)"><div class="project-cover">📊</div><div class="project-body"><h3>Digital Media Analytics Poster</h3><p>Visual explanation of engagement metrics for media content.</p><span class="tag">Infographic</span><span class="tag">Analytics</span></div></article>
+      </div>
+    </section>
+
+    <section id="reflection" class="section">
+      <h2>💭 Section 5: Personal Reflection</h2>
+      <div class="panel" style="padding:24px">
+        <div class="accordion open">
+          <button onclick="toggleAcc(this)">Why do you want to work for your chosen company and what value can you bring? <span>+</span></button>
+          <div class="acc-body">
+            <p>Project work has systematically improved my ability to plan, design, test, and refine digital artifacts while connecting classroom theories with practical development tasks. Bringing this structural mindset to a company lets me bridge creative design and functional system development, ensuring engineered products remain engaging and secure.</p>
+          </div>
+        </div>
+        <div class="accordion">
+          <button onclick="toggleAcc(this)">What skills make you suitable for this job? <span>+</span></button>
+          <div class="acc-body">
+            <p>My academic background directly combines technology, design, communication, and user experience. Because I recognize that a great digital product must function correctly, look appealing, and protect data, I bring a well-rounded approach to building and vetting customer-facing digital applications.</p>
+          </div>
+        </div>
+        <div class="accordion">
+          <button onclick="toggleAcc(this)">Why would a company choose to hire you? <span>+</span></button>
+          <div class="acc-body">
+            <p>Unlike traditional developers who focus entirely on system logic or designers who focus solely on interface aesthetics, I target the intersection of both fields. I configure clean interfaces, maintain clear communication across project teams, and apply continuous iterative updates to elevate software usability and user safety.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -359,24 +401,24 @@
 
   <div class="modal" id="modal" onclick="closeModal(event)">
     <div class="modal-inner" onclick="event.stopPropagation()">
-      <div class="modal-head"><div><h2 id="modalTitle">Project</h2><p id="modalIntro" style="margin-top:4px; font-size:0.92rem;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
+      <div class="modal-head"><div><h2 id="modalTitle">Project Specs</h2><p id="modalIntro" style="margin-top:4px;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
       <div id="modalBody"></div>
     </div>
   </div>
 
   <footer class="footer">
-    <p class="print-note">Official Verification Print Document // CSA30203 Special Topics in Computer Network Security.</p>
-    <p>Individual e-Portfolio submitted by Muhammad Aiman Hakimy Bin Azmi for Bachelor of Information Technology (Media Informatics). All code, layout configurations, and technical project tracking structures have been compiled to fulfill the 20% grading requirements under Dr. Nazirah.</p>
+    <p class="print-note">Official Verification Print Document // CSA30203 Academic Assessment.</p>
+    <p>Individual e-Portfolio compiled by Muhammad Aiman Hakimy Bin Azmi for Bachelor of Information Technology (Informatics Media). Designed to fulfill the 20% grading specifications required under Dr. Nazirah.</p>
   </footer>
 
 <script>
 const projects = [
-  {title:'TraDC AR Cultural Modernization Engine',intro:'An interactive digital preservation application rendering traditional cultural game assets (Congkak, Wau Bulan, Gasing, Batu Seremban) via mobile augmented reality systems.',tools:'Unity Engine, Vuforia AR SDK, C# Code Architecture, Blender 3D, Substance Painter',skills:'Augmented reality target alignment, 3D mesh optimization, vertex control, runtime script compilation, interactive logic design',evidence:'AR target tracking screenshots, high-fidelity lighting model assets, interactive C# event script blocks, asset gallery links',reflection:'This project validated my ability to process complex 3D tracking assets. I optimized low-poly geometry boundaries to preserve real-time rendering speeds on mobile endpoints while ensuring script events executed predictably.'},
-  {title:'2D Speed Math Adventure System',intro:'A gamified primary school educational application constructed using structured logical progression sets to teach math skills to primary students.',tools:'HTML5 Canvas, Vanilla JavaScript Engine, CSS3, Adobe Illustrator asset maps',skills:'HCI principles, structural data tracking, client-side logic states, interaction testing, cross-browser performance tuning',evidence:'Dynamic state machine source code, vector asset artboards, responsive viewport layout snapshots',reflection:'I discovered that interface structures must adjust dynamically to human input patterns. This taught me to decouple core game logic states from visual rendering routines to maintain stable execution cycles.'},
-  {title:'Secure Input Validation Login Interface',intro:'A form-hardened web interface module explicitly engineered to block typical client-side application attacks.',tools:'Visual Studio Code, JavaScript Engine, HTML5 Form Architecture, Regular Expression Modules',skills:'Client input validation, defensive sanitization logic, form pattern enforcement, security messaging architecture',evidence:'Regular expression validation matrices, secure error state flow charts, production code snippets',reflection:'I learned that security cannot be treated as a decorative outer layer. Hardening text inputs against unexpected string values before passing data to underlying application storage is critical to neutralizing payload injections.'},
-  {title:'Enterprise Networking Role Infrastructure',intro:'A structured security routing blueprint mapping modern networking pathways with explicit access-control profiles.',tools:'Cisco Packet Tracer, Microsoft Vision Architecture Suite',skills:'Topological mapping design, logical subnetwork division, zero-trust role delegation, access control rules configuration',evidence:'Network routing architecture maps, subnetwork IP distribution sheets, rule verification output tables',reflection:'Collaborating with teammates (Wali, Syahmi, Bad, Qil) taught me how network segments function. We systematically assigned separate network positions to isolate resources, preventing lateral threat movement across structural assets.'},
-  {title:'Kopi Pagi Platform Sales Analytics Dashboard',intro:'A commercial business data visualization tracking engine parsing conversions, user metrics, and platform distribution values.',tools:'Gumroad Data Pipeline, Microsoft Power BI, Excel Data Tables, Canva Engine templates',skills:'Data extraction, metric organization, transactional charting mechanics, visual interface hierarchy creation',evidence:'Power BI dashboard layouts, processed data tables, functional conversion charts',reflection:'This project built my confidence in translating messy transactional logs into actionable visual interfaces. It highlighted how tracking real-world metrics lets organizations adapt their structural code parameters based on user behavior trends.'},
-  {title:'Cybersecurity Awareness System Platform',intro:'An interactive, public-facing digital media system designed to educate enterprise users on social engineering mitigations and access protection policies.',tools:'Google Sites, Figma Vector Suites, CapCut Production Engine, PowerPoint Presentation Frameworks',skills:'Threat matrix translation, structural content simplification, vector asset design, informational communication flows',evidence:'Phishing mitigation maps, data privacy animation clips, live campaign microsite portal deployment links',reflection:'This module challenged me to distill complex system architecture risks into simple, accessible visual guidelines. It proved that human endpoints require clear user interaction indicators to reduce operational system risks.'}
+  {title:'Personal Responsive Website',intro:'A student branding website using HTML, CSS, and JavaScript.',tools:'HTML5, CSS3, Vanilla JS Engine',skills:'Responsive layouts, modular styling structure, cross-viewport layout rendering',evidence:'Deployment root folder, responsive mobile view configurations, asset sheets',reflection:'Strengthened understanding of responsive frameworks. Integrated decoupled structural code matrices to optimize parsing and render times across target mobile environments.'},
+  {title:'UniEvent App Prototype',intro:'A mobile app prototype for university event discovery.',tools:'Figma UX Engine, Vector Asset Frameworks',skills:'Wireframing, functional interaction blueprints, accessibility user flows mapping',evidence:'High-fidelity prototype viewports, task matrices, design asset components',reflection:'Validated that modern interface designs must balance appearance with clear user flows, making sure navigation items stay secure and intuitive.'},
+  {title:'Cybersecurity Awareness Campaign',intro:'Digital campaign materials on phishing, passwords, and privacy.',tools:'Adobe Illustrator, Graphic Design Templates, CapCut Engine',skills:'Vulnerability simplification, secure operations layout, technical communication execution',evidence:'Phishing mitigation maps, threat vector infographics, active deployment links',reflection:'Translated application and database risks into visual layouts, training network endpoints to spot system injection anomalies and social engineering vectors.'},
+  {title:'Interactive Learning Material',intro:'Multimedia learning content for basic networking concepts.',tools:'H5P Logic Integration, Multimedia Elements, PowerPoint Matrix',skills:'Instructional data design, packet routing diagrams, connection layers illustration',evidence:'Interactive canvas blocks, networking flowchart maps, quiz evaluation logs',reflection:'Balanced asset delivery with content clarity. Configured structured interaction elements to systematically guide users through standard networking layers and packet boundaries.'},
+  {title:'Secure Login Interface',intro:'A prototype login page with usability & security features.',tools:'HTML5 Forms, Javascript Input Sanitization, Defensive Patterns',skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.'},
+  {title:'Digital Media Analytics Poster',intro:'Visual explanation of engagement metrics for media content.',tools:'Canva Asset Suites, Excel Analytics Engines, Power BI Templates',skills:'Data visualization layout, analytical system metrics conversion, structured reporting models',evidence:'Analytical engagement charts, production metrics layout, visual reporting sheets',reflection:'Refined the skill of converting log data into actionable security dashboard views, allowing engineers to audit application traffic trends over time.'}
 ];
 
 function toggleTheme(){
@@ -404,16 +446,15 @@ function showProject(i){
   document.getElementById('modalBody').innerHTML=`
     <table>
       <thead>
-        <tr><th style="width: 30%">Evaluation Axis</th><th>Verifiable System Implementation Metrics</th></tr>
+        <tr><th style="width: 30%">Evaluation Metric</th><th>Verified Implementation Specifics</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Development Tools Used</strong></td><td><code>${p.tools}</code></td></tr>
-        <tr><td><strong>Demonstrated Engineering Skills</strong></td><td><strong>${p.skills}</strong></td></tr>
-        <tr><td><strong>Verifiable Academic Evidence</strong></td><td>${p.evidence}</td></tr>
-        <tr><td><strong>Secure Software Reflection</strong></td><td><em>${p.reflection}</em></td></tr>
+        <tr><td><strong>Development Tools</strong></td><td><code>${p.tools}</code></td></tr>
+        <tr><td><strong>Demonstrated Skills</strong></td><td><strong>${p.skills}</strong></td></tr>
+        <tr><td><strong>Verifiable Evidence</strong></td><td>${p.evidence}</td></tr>
+        <tr><td><strong>Secure Dev Reflection</strong></td><td><em>${p.reflection}</em></td></tr>
       </tbody>
-    </table>
-    <p style="margin-top:16px; font-size: 0.84rem; color: var(--warning);">⚡ Aiman's Submission Note: Ensure live workspace files, compiled package files, and GitHub code repository links are accurately linked to these specific evidence rows prior to submission.</p>`;
+    </table>`;
   document.getElementById('modal').classList.add('open');
 }
 function closeModal(e){
@@ -423,17 +464,10 @@ function closeModal(e){
 function toggleAcc(btn){
   btn.parentElement.classList.toggle('open');
 }
-function updateProgress(){
-  const boxes=[...document.querySelectorAll('#checklist input[type="checkbox"]')];
-  const checked=boxes.filter(b=>b.checked).length;
-  const pct=Math.round((checked/boxes.length)*100);
-  document.getElementById('progressText').textContent=pct+'%';
-  document.getElementById('progressFill').style.width=pct+'%';
-}
 function animateBars(){
   document.querySelectorAll('.fill[data-w]').forEach(f=>{f.style.width=f.dataset.w});
 }
-window.addEventListener('load',()=>{animateBars();updateProgress();});
+window.addEventListener('load', animateBars);
 window.addEventListener('keydown',e=>{if(e.key==='Escape') document.getElementById('modal').classList.remove('open')});
 </script>
 </body>
