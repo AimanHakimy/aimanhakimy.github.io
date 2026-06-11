@@ -80,16 +80,10 @@
     h3 { margin: 0 0 8px; font-size: 1.1rem; font-weight: 650; }
     p { margin: 0 0 16px; color: var(--muted); font-size: 0.98rem; }
     
-    /* Inline aligned target role panel row with profile block */
     .inline-role-panel {
       width: 100%; display: flex; align-items: center; gap: 20px; padding: 20px; 
       background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
       margin-top: 8px; box-shadow: var(--shadow);
-    }
-    .avatar-mini {
-      width: 54px; height: 54px; border-radius: 8px; display: grid; place-items: center;
-      background: linear-gradient(135deg, var(--panel2), #030209); border: 1px solid var(--line);
-      font-size: 1.3rem; font-weight: 700; color: var(--accent); flex-shrink: 0;
     }
     .role-details { display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 16px; }
     .role-title-group h3 { margin: 0 0 4px; font-size: 1.05rem; }
@@ -101,9 +95,6 @@
     }
     .chips { display: flex; gap: 6px; flex-wrap: wrap; }
     .chip { padding: 5px 10px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); font-size: 0.78rem; background: rgba(255, 255, 255, 0.01); font-weight: 600; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; border: 0; font-weight: 700; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2); }
-    .btn.primary:hover { box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3); transform: translateY(-1px); }
     
     .section { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
     .grid { display: grid; gap: 20px; }
@@ -111,8 +102,6 @@
     .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .card { padding: 24px; }
     .card:hover { border-color: var(--accent); }
-    .card .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
-    .mini { font-size: 0.84rem; color: var(--muted); }
     
     .timeline { position: relative; margin-top: 15px; }
     .timeline:before { content: ""; position: absolute; left: 16px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
@@ -191,14 +180,12 @@
     <section class="hero">
       <div class="badge">● Course: CSA30203 Special Topics in Computer Network Security</div>
       <h1>Muhammad Aiman Hakimy Bin Azmi</h1>
-      <p style="font-size:1.1rem; max-width:820px; color: var(--muted); margin-bottom: 4px;">
+      <p style="font-size:1.1rem; max-width:820px; color: var(--muted); margin-bottom: 8px;">
         I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.
         My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.
         I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.
       </p>
-
       <div class="inline-role-panel">
-        <div class="avatar-mini">MA</div>
         <div class="role-details">
           <div class="role-title-group">
             <h3>Target Career Role</h3>
@@ -208,13 +195,9 @@
             <span class="chip">3D Application Dev</span>
             <span class="chip">Security-Focused Software Developer</span>
             <span class="chip">UI/UX Verification</span>
+            <span class="chip">Unity</span>
           </div>
         </div>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">View Source Artefacts</a>
-        <button class="btn" onclick="window.print()">Export Portfolio (PDF)</button>
       </div>
     </section>
 
@@ -278,19 +261,20 @@
         <div class="grid cols-2">
           <div class="card">
             <h3>Technical Metrics</h3>
-            <div class="skill"><div class="skill-top"><span>Unity & 3D Application Dev</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Security-Focused Software Developer</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>UI/UX Usability Verification</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
-            <div class="skill"><div class="skill-top"><span>Basic Network Security</span><span>68%</span></div><div class="bar"><div class="fill" data-w="68%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Unity Engine & C# Coding</span><span>82%</span></div><div class="bar"><div class="fill" data-w="82%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>3D Application Dev & Asset Optimization</span><span>78%</span></div><div class="bar"><div class="fill" data-w="78%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>UI/UX Verification & Usability Audits</span><span>74%</span></div><div class="bar"><div class="fill" data-w="74%"></div></div></div>
+            <div class="skill"><div class="skill-top"><span>Security-Focused Software Development</span><span>68%</span></div><div class="bar"><div class="fill" data-w="68%"></div></div></div>
           </div>
           <div class="card">
             <h3>Core Skill Evidence</h3>
             <table>
               <thead><tr><th>Skill</th><th>Evidence Material</th></tr></thead>
               <tbody>
-                <tr><td><strong>Web Development</strong></td><td>Responsive personal website and campaign microsite deployment.</td></tr>
-                <tr><td><strong>Database</strong></td><td>Entity relationship diagram and SQL table design layouts.</td></tr>
-                <tr><td><strong>Networking</strong></td><td>Secure basic network diagram and matching security awareness materials.</td></tr>
+                <tr><td><strong>Unity & C#</strong></td><td>TraDC AR preservation engine script blocks and gamified logic setups.</td></tr>
+                <tr><td><strong>3D Application Dev</strong></td><td>Low-poly asset mapping and lighting optimization configurations.</td></tr>
+                <tr><td><strong>UI/UX Verification</strong></td><td>High-fidelity functional interaction blueprints and testing frameworks.</td></tr>
+                <tr><td><strong>Security-Focused Dev</strong></td><td>Input validation scripts, form hardening layers, and defensive handlers.</td></tr>
               </tbody>
             </table>
           </div>
@@ -299,12 +283,12 @@
 
       <div id="media" class="tab-content">
         <div class="grid cols-3">
-          <div class="card"><h3>Visual Design</h3><p>Uses layout, color, typography, and visual hierarchy to communicate ideas clearly.</p></div>
-          <div class="card"><h3>UI/UX Design</h3><p>Creates wireframes, user flows, and prototypes based on user needs and usability principles.</p></div>
-          <div class="card"><h3>Multimedia Production</h3><p>Produces posters, infographics, short videos, and learning materials for digital platforms.</p></div>
-          <div class="card"><h3>Communication</h3><p>Presents technical and creative work clearly to classmates, lecturers, and stakeholders.</p></div>
-          <div class="card"><h3>Teamwork</h3><p>Collaborates in group-based design and development activities with clear task distribution.</p></div>
-          <div class="card"><h3>Problem Solving</h3><p>Applies testing, feedback, and iteration to improve digital artifacts.</p></div>
+          <div class="card"><h3>Unity Architecture</h3><p>Implements runtime script compilation, interactive interface states, and event handling within engine pipelines.</p></div>
+          <div class="card"><h3>3D Application Dev</h3><p>Optimizes layout geometry boundaries, 3D low-poly meshes, and texturing logic for immersive interactions.</p></div>
+          <div class="card"><h3>UI/UX Verification</h3><p>Evaluates functional screen flows, wireframes, and interface prototypes against usability metrics.</p></div>
+          <div class="card"><h3>Security-Focused Dev</h3><p>Hardens application interfaces against vulnerability vectors by parsing validation constraints into client routines.</p></div>
+          <div class="card"><h3>Collaborative Practice</h3><p>Deploys distributed tasks cleanly across project groups to integrate networking systems.</p></div>
+          <div class="card"><h3>Problem Solving</h3><p>Applies systematic code refactoring, diagnostics, and debugging cycles to finalize artifacts.</p></div>
         </div>
       </div>
 
@@ -317,19 +301,19 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Secure Web Development</strong></td>
-                <td>Experience building functional web apps but need deeper knowledge of secure code testing.</td>
-                <td>Study secure coding guidelines, privacy-by-design mechanics, and common web vulnerability concepts.</td>
+                <td><strong>3D Application Dev (Unity)</strong></td>
+                <td>Proficient in fundamental client execution logic and custom asset rendering pipelines.</td>
+                <td>Build complex, modular state engines utilizing modern design patterns within interactive frameworks.</td>
               </tr>
               <tr>
-                <td><strong>UI/UX Usability Testing</strong></td>
-                <td>Creating wireframes and interface prototypes in design tools.</td>
-                <td>Conduct structured usability testing with real users to gather functional feedback.</td>
+                <td><strong>Security-Focused Software Developer</strong></td>
+                <td>Aware of defensive parameters but require deeper structural validation routine metrics.</td>
+                <td>Study advanced input sanitization protocols, data privacy models, and source code auditing patterns.</td>
               </tr>
               <tr>
-                <td><strong>Advanced Frameworks</strong></td>
-                <td>Proficient in standard client-side scripting and styles.</td>
-                <td>Build more interactive web applications using modern JavaScript frameworks.</td>
+                <td><strong>UI/UX Verification</strong></td>
+                <td>Creating layout prototypes and interactive map parameters using UI suites.</td>
+                <td>Conduct structured usability tests with active consumer arrays to establish analytical performance audits.</td>
               </tr>
             </tbody>
           </table>
@@ -343,10 +327,10 @@
         <div class="card">
           <h3>🛠️ Future Development Action Plan</h3>
           <ul style="padding-left:20px; color:var(--muted);">
-            <li style="margin-bottom:12px;"><strong>Web Development:</strong> Build more interactive web applications using JavaScript frameworks.</li>
-            <li style="margin-bottom:12px;"><strong>UI/UX:</strong> Conduct structured usability testing with real users to evaluate interactive prototypes.</li>
-            <li style="margin-bottom:12px;"><strong>Cybersecurity:</strong> Learn secure coding, privacy-by-design, and basic web vulnerability concepts to strengthen platform defenses.</li>
-            <li><strong>Media Production:</strong> Improve storytelling, editing, and analytics-based content design across media pipelines.</li>
+            <li style="margin-bottom:12px;"><strong>Unity:</strong> Build complex, component-driven interactive applications using state engines.</li>
+            <li style="margin-bottom:12px;"><strong>UI/UX Verification:</strong> Execute objective usability criteria mapping to evaluate spatial interface prototypes.</li>
+            <li style="margin-bottom:12px;"><strong>Security-Focused Dev:</strong> Audit software code loops against common exploit vectors to integrate automated sanitization.</li>
+            <li><strong>3D Application Dev:</strong> Modernize asset rendering efficiency metrics across mobile and web runtime configurations.</li>
           </ul>
         </div>
         <div class="card">
