@@ -137,13 +137,13 @@
     .x { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); color: var(--text); border-radius: 6px; padding: 6px 12px; cursor: pointer; font-weight: 600; }
     .x:hover { border-color: var(--accent); color: var(--accent); }
     
-    .project-image-placeholder {
-      width: 100%; height: 240px; border: 2px dashed var(--line); border-radius: 8px;
-      margin-bottom: 20px; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; background: rgba(255, 255, 255, 0.01); color: var(--muted);
-      position: relative; overflow: hidden;
+    /* Dedicated Style for Embedded Screenshot Rendering */
+    .project-image-view {
+      width: 100%; height: auto; max-height: 360px; border: 1px solid var(--line);
+      border-radius: 8px; margin-bottom: 20px; display: none; overflow: hidden;
+      background: #000;
     }
-    .project-image-placeholder:hover { border-color: var(--accent); color: var(--text); }
+    .project-image-view img { width: 100%; height: 100%; object-fit: contain; display: block; }
     
     table { width: 100%; border-collapse: collapse; border-radius: 6px; overflow: hidden; margin-top: 10px; }
     th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.9rem; }
@@ -157,7 +157,7 @@
       .links { display: none; }
     }
     @media print {
-      .topbar, .hero-actions, .project-toolbar, .tabs, .modal { display: none !important; }
+      .topbar, .project-toolbar, .tabs, .modal { display: none !important; }
       body { background: white; color: #111; }
       .card, .panel, .inline-role-panel { box-shadow: none; border: 1px solid #ccc; background: white; margin-bottom: 20px; page-break-inside: avoid; }
       .tab-content { display: block !important; }
@@ -177,7 +177,6 @@
         <a href="#about">About</a>
         <a href="#skills">Skills Assessment</a>
         <a href="#projects">Project Gallery</a>
-        <a href="#readiness">Readiness Plan</a>
         <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
       </div>
     </nav>
@@ -398,11 +397,7 @@
     <div class="modal-inner" onclick="event.stopPropagation()">
       <div class="modal-head"><div><h2 id="modalTitle">Project Specs</h2><p id="modalIntro" style="margin-top:4px;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
       
-      <div class="project-image-placeholder" id="modalImageContainer">
-        <span class="icon" style="font-size: 1.5rem; margin-bottom: 4px;">🖼️</span>
-        <span style="font-size: 0.82rem; font-weight: 600;">[ Insert Project Screenshot Link ]</span>
-        <span class="mini" style="font-size: 0.74rem;">Replace placeholder src in script map to load active interface visual</span>
-      </div>
+      <div class="project-image-view" id="modalImageView"></div>
 
       <div id="modalBody"></div>
     </div>
@@ -415,10 +410,42 @@
 
 <script>
 const projects = [
-  {title:'TRaDC AR Preservation Engine',intro:'Digital cultural game preservation engine using Unity and Vuforia AR systems.',tools:'Unity Engine, Vuforia SDK, C# Compiler, Blender 3D',skills:'Augmented Reality target mapping, low-poly geometry configuration, runtime logic events execution',evidence:'AR workspace screenshots, optimized model asset paths, script validation blocks',reflection:'Deployed interactive digital variants of traditional artifacts. Focused on keeping geometry boundaries small to prevent frame lag while keeping system variables stable during image identification layers.'},
-  {title:'Forgotten Island',intro:'An interactive 3D application design environment built to optimize secure asset streaming workflows.',tools:'Unity Engine, 3D Asset Suites, Lighting Maps',skills:'Spatial system optimization, interactive lighting arrays deployment, camera control setups',evidence:'Scene tree blueprints, asset layout wireframes, runtime compilation logs',reflection:'Developed workflow parameters designed to stream environments fluidly. Audited mesh sizes and texture boundaries to verify performance constraints before packaging the standalone client deployment.'},
-  {title:'Data Communication Model Mapping',intro:'Academic coursework detailing the mapping of Data Communication models, OSI layers, and TCP/IP protocol suites.',tools:'Cisco Packet Tracer, Network Mapping Suites',skills:'Network layer mapping, packet transmission pathways auditing, architectural topology modeling',evidence:'OSI layer blueprints, protocol configurations, network packet analysis records',reflection:'Systematically traced headers and data transport blocks through the networking layers. Gained deep structural clarity on how encapsulation routines shield raw message parameters across logical nodes.'},
-  {title:'Secure Login Interface',intro:'A prototype login page with usability & security features.',tools:'HTML5 Forms, Javascript Input Sanitization, Defensive Patterns',skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.'}
+  {
+    title:'TRaDC AR Preservation Engine',
+    intro:'Digital cultural game preservation engine using Unity and Vuforia AR systems.',
+    tools:'Unity Engine, Vuforia SDK, C# Compiler, Blender 3D',
+    skills:'Augmented Reality target mapping, low-poly geometry configuration, runtime logic events execution',
+    evidence:'AR workspace screenshots, optimized model asset paths, script validation blocks',
+    reflection:'Deployed interactive digital variants of traditional artifacts. Focused on keeping geometry boundaries small to prevent frame lag while keeping system variables stable during image identification layers.',
+    image: 'tradc-ar.png'
+  },
+  {
+    title:'Forgotten Island',
+    intro:'An interactive 3D application design environment built to optimize secure asset streaming workflows.',
+    tools:'Unity Engine, 3D Asset Suites, Lighting Maps',
+    skills:'Spatial system optimization, interactive lighting arrays deployment, camera control setups',
+    evidence:'Scene tree blueprints, asset layout wireframes, runtime compilation logs',
+    reflection:'Developed workflow parameters designed to stream environments fluidly. Audited mesh sizes and texture boundaries to verify performance constraints before packaging the standalone client deployment.',
+    image: 'forgotten-island.png'
+  },
+  {
+    title:'Data Communication Model Mapping',
+    intro:'Academic coursework detailing the mapping of Data Communication models, OSI layers, and TCP/IP protocol suites.',
+    tools:'Cisco Packet Tracer, Network Mapping Suites',
+    skills:'Network layer mapping, packet transmission pathways auditing, architectural topology modeling',
+    evidence:'OSI layer blueprints, protocol configurations, network packet analysis records',
+    reflection:'Systematically traced headers and data transport blocks through the networking layers. Gained deep structural clarity on how encapsulation routines shield raw message parameters across logical nodes.',
+    image: 'datacom-mapping.png'
+  },
+  {
+    title:'Secure Login Interface',
+    intro:'A prototype login page with usability & security features.',
+    tools:'HTML5 Forms, Javascript Input Sanitization, Defensive Patterns',
+    skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',
+    evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',
+    reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.',
+    image: 'secure-login.png'
+  }
 ];
 
 function toggleTheme(){
@@ -443,6 +470,16 @@ function showProject(i){
   const p=projects[i];
   document.getElementById('modalTitle').textContent=p.title;
   document.getElementById('modalIntro').textContent=p.intro;
+  
+  const imgFrame = document.getElementById('modalImageView');
+  if(p.image && p.image.trim() !== "") {
+    imgFrame.innerHTML = `<img src="${p.image}" alt="${p.title} Artifact Visual Proof">`;
+    imgFrame.style.display = "block";
+  } else {
+    imgFrame.style.display = "none";
+    imgFrame.innerHTML = "";
+  }
+
   document.getElementById('modalBody').innerHTML=`
     <table>
       <thead>
