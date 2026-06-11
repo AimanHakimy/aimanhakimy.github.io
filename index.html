@@ -140,10 +140,19 @@
     .project-image-view {
       width: 100%; height: auto; max-height: 340px; border: 1px solid var(--line);
       border-radius: 8px; margin-bottom: 20px; display: none; overflow: hidden;
-      background: #000;
+      background: #000; cursor: zoom-in; position: relative;
     }
     .project-image-view img { width: 100%; height: 100%; object-fit: contain; display: block; }
     
+    /* Full-screen Lightbox Styles for Image Expansion */
+    .lightbox {
+      position: fixed; inset: 0; background: rgba(3, 2, 9, 0.95); backdrop-filter: blur(12px);
+      z-index: 150; display: none; align-items: center; justify-content: center;
+      cursor: zoom-out; opacity: 0; transition: opacity 0.25s ease;
+    }
+    .lightbox.open { display: flex; opacity: 1; }
+    .lightbox img { max-width: 92vw; max-height: 92vh; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; box-shadow: 0 0 40px rgba(0,0,0,0.8); }
+
     table { width: 100%; border-collapse: collapse; border-radius: 6px; overflow: hidden; margin-top: 10px; }
     th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.9rem; }
     th { color: var(--accent); background: rgba(59, 130, 246, 0.06); font-weight: 650; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px; }
@@ -156,7 +165,7 @@
       .links { display: none; }
     }
     @media print {
-      .topbar, .project-toolbar, .tabs, .modal { display: none !important; }
+      .topbar, .project-toolbar, .tabs, .modal, .lightbox { display: none !important; }
       body { background: white; color: #111; }
       .card, .panel, .inline-role-panel { box-shadow: none; border: 1px solid #ccc; background: white; margin-bottom: 20px; page-break-inside: avoid; }
       .tab-content { display: block !important; }
@@ -415,9 +424,15 @@
   <div class="modal" id="modal" onclick="closeModal(event)">
     <div class="modal-inner" onclick="event.stopPropagation()">
       <div class="modal-head"><div><h2 id="modalTitle">Project Specs</h2><p id="modalIntro" style="margin-top:4px;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
-      <div class="project-image-view" id="modalImageView"></div>
+      
+      <div class="project-image-view" id="modalImageView" title="Click to view image full screen"></div>
+
       <div id="modalBody"></div>
     </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImage" src="" alt="Expanded System Artifact Proof View">
   </div>
 
   <footer class="footer">
@@ -434,7 +449,7 @@ const projects = [
     skills:'Augmented Reality target mapping, low-poly geometry configuration, runtime logic events execution',
     evidence:'AR workspace screenshots, optimized model asset paths, script validation blocks',
     reflection:'Deployed interactive digital variants of traditional artifacts. Focused on keeping geometry boundaries small to prevent frame lag while keeping system variables stable during image identification layers.',
-    image: 'Screenshot 2026-01-15 110103.png'
+    image: 'tradc-ar.png'
   },
   {
     title:'Forgotten Island',
@@ -443,7 +458,7 @@ const projects = [
     skills:'Spatial system optimization, interactive lighting arrays deployment, camera control setups',
     evidence:'Scene tree blueprints, asset layout wireframes, runtime compilation logs',
     reflection:'Developed workflow parameters designed to stream environments fluidly. Audited mesh sizes and texture boundaries to verify performance constraints before packaging the standalone client deployment.',
-    image: 'Screenshot 2026-06-11 142943.png'
+    image: 'forgotten-island.png'
   },
   {
     title:'Data Communication Model Mapping',
@@ -452,7 +467,7 @@ const projects = [
     skills:'Network layer mapping, packet transmission pathways auditing, architectural topology modeling',
     evidence:'OSI layer blueprints, protocol configurations, network packet analysis records',
     reflection:'Systematically traced headers and data transport blocks through the networking layers. Gained deep structural clarity on how encapsulation routines shield raw message parameters across logical nodes.',
-    image: 'Data.png'
+    image: 'datacom-mapping.png'
   },
   {
     title:'Secure Login Interface',
@@ -461,7 +476,7 @@ const projects = [
     skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',
     evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',
     reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.',
-    image: 'login.png'
+    image: 'secure-login.png'
   }
 ];
 
@@ -490,7 +505,8 @@ function showProject(i){
   
   const imgFrame = document.getElementById('modalImageView');
   if(p.image && p.image.trim() !== "") {
-    imgFrame.innerHTML = `<img src="${p.image}" alt="${p.title} Artifact Visual Proof">`;
+    // Injected image calls the openLightbox event runtime trigger on user click behavior
+    imgFrame.innerHTML = `<img src="${p.image}" alt="${p.title} Artifact View" onclick="openLightbox('${p.image}')">`;
     imgFrame.style.display = "block";
   } else {
     imgFrame.style.display = "none";
@@ -515,6 +531,18 @@ function closeModal(e){
   if(e && e.target.id!=='modal') return;
   document.getElementById('modal').classList.remove('open');
 }
+
+/* Lightbox Image Expansion Event Trigger Routers */
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImage');
+  lbImg.src = src;
+  lb.classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
 function toggleAcc(btn){
   btn.parentElement.classList.toggle('open');
 }
@@ -522,7 +550,12 @@ function animateBars(){
   document.querySelectorAll('.fill[data-w]').forEach(f=>{f.style.width=f.dataset.w});
 }
 window.addEventListener('load', animateBars);
-window.addEventListener('keydown',e=>{if(e.key==='Escape') document.getElementById('modal').classList.remove('open')});
+window.addEventListener('keydown',e=>{
+  if(e.key==='Escape') {
+    closeLightbox();
+    document.getElementById('modal').classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
