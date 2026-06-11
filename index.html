@@ -390,7 +390,7 @@
         <div class="accordion">
           <button onclick="toggleAcc(this)">What value can you bring to this company? <span>+</span></button>
           <div class="acc-body">
-            <p>I bring specialized value in 3D application optimization (Unity/Blender) and defensive code validation routines. Within Proton's modern layout, manufacturing training simulations, digital twin monitoring modules, and internal web utilities require high performance combined with strict identity data protection. My rare synthesis of interactive visual asset engineering and secure client-side database management means I can build rich training interfaces and secure factory floor platforms that protect proprietary data from exploit vectors right out of the box.</p>
+            <p>I bring specialized value in 3D application optimization (Unity/Blender) and defensive code validation routines. Within Proton's modern layout, manufacturing training simulations, digital twin monitoring modules, and internal web utilities require high performance combined with strict identity data protection. My synthesis of interactive visual asset engineering and secure client-side database management means I can build rich training interfaces and secure factory floor platforms that protect proprietary data from exploit vectors right out of the box.</p>
           </div>
         </div>
 
@@ -405,7 +405,7 @@
           <button onclick="toggleAcc(this)">What are your strengths and weaknesses? <span>+</span></button>
           <div class="acc-body">
             <p><strong>Strengths:</strong> Strict architectural script parsing logic, professional proficiency in evaluating spatial UI/UX layouts against human-centric criteria, and an unwavering habit of integrating input sanitization bounds during core development loops.</p>
-            <p><strong>Weaknesses:</strong> My exposure to large-scale enterprise network topologies and hardware boundary layers was initially academic. However, I am actively bridging this knowledge gap through the structural subnetwork tracking, IP allocation sheet parsing, and data layer encapsulation models taught in my CSA30203 Special Topics course.</p>
+            <p><strong>Weaknesses:</strong> My exposure to large-scale enterprise network topologies and hardware boundary layers was initially academic. However, I am systematically neutralizing this knowledge gap through the structural subnetwork tracking, IP allocation sheet parsing, and data layer encapsulation models taught in my CSA30203 Special Topics course.</p>
           </div>
         </div>
 
@@ -483,7 +483,7 @@ function toggleTheme(){
 }
 function openTab(evt,id){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.forEach(c=>c.classList.remove('active')));
   evt.currentTarget.classList.add('active');
   document.getElementById(id).classList.add('active');
 }
@@ -522,6 +522,22 @@ function showProject(i){
       </tbody>
     </table>`;
   document.getElementById('modal').classList.add('open');
+}
+// Overrode tab content routers specifically to enforce cross-browser selector stability
+function openTab(evt,id){
+  var i, tc, t;
+  tc = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tc.length; i++) {
+    tc[i].style.display = "none";
+    tc[i].classList.remove("active");
+  }
+  t = document.getElementsByClassName("tab");
+  for (i = 0; i < t.length; i++) {
+    t[i].classList.remove("active");
+  }
+  document.getElementById(id).style.display = "block";
+  document.getElementById(id).classList.add("active");
+  evt.currentTarget.classList.add("active");
 }
 function closeModal(e){
   if(e && e.target.id!=='modal') return;
