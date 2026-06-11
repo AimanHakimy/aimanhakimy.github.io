@@ -144,7 +144,6 @@
     }
     .project-image-view img { width: 100%; height: 100%; object-fit: contain; display: block; }
     
-    /* Full-screen Lightbox Styles for Image Expansion */
     .lightbox {
       position: fixed; inset: 0; background: rgba(3, 2, 9, 0.95); backdrop-filter: blur(12px);
       z-index: 150; display: none; align-items: center; justify-content: center;
@@ -382,38 +381,38 @@
       <div class="panel" style="padding:24px">
         
         <div class="accordion open">
-          <button onclick="toggleAcc(this)">Why do you want to work for your chosen company (LGMS Berhad)? <span>+</span></button>
+          <button onclick="toggleAcc(this)">Why do you want to work for your chosen company (Proton Tanjung Malim)? <span>+</span></button>
           <div class="acc-body">
-            <p>I want to build my career at <strong>LGMS Berhad</strong> because it stands as Malaysia's premier world-class cybersecurity specialized firm, globally certified for penetration testing and digital defense auditing. My academic background in Media Informatics directly interfaces with frontend mechanics and client runtimes—areas that are highly targeted by web exploit threats. Working at LGMS would allow me to embed myself with premier cybersecurity experts and apply my programming logic to protect their clients' high-value digital asset application layers.</p>
+            <p>I want to build my career at <strong>Proton Tanjung Malim</strong> because it represents the pinnacle of Malaysia's automotive industrial modernization, driven by advanced automation, smart manufacturing pipelines, and IoT network infrastructures. As Proton transitions heavily into high-tech connected vehicles, automated robotic manufacturing lines, and digitized logistics software, application security becomes mission-critical. I want to deploy my IT expertise inside this dynamic ecosystem to ensure that corporate systems, assembly tracking software, and factory floor platforms are built with a security-first approach.</p>
           </div>
         </div>
 
         <div class="accordion">
           <button onclick="toggleAcc(this)">What value can you bring to this company? <span>+</span></button>
           <div class="acc-body">
-            <p>I bring a highly specialized combination of 3D application development skills and client-side sanitization knowledge. Most traditional security analysts look strictly at system ports and infrastructure, missing bugs embedded inside multi-layered frontend interfaces or game engines. With my mastery over Unity engine data logic and input verification mechanics, I bring the rare value of a programmer who knows how to debug interactive code architectures and lock down entry fields before compilation ever occurs.</p>
+            <p>I bring specialized value in 3D application optimization (Unity/Blender) and defensive code validation routines. Within Proton's modern layout, manufacturing training simulations, digital twin monitoring modules, and internal web utilities require high performance combined with strict identity data protection. My rare synthesis of interactive visual asset engineering and secure client-side database management means I can build rich training interfaces and secure factory floor platforms that protect proprietary data from exploit vectors right out of the box.</p>
           </div>
         </div>
 
         <div class="accordion">
           <button onclick="toggleAcc(this)">What skills make you suitable for this job? <span>+</span></button>
           <div class="acc-body">
-            <p>My core suitability sits at the intersection of <strong>3D Application Dev (Unity/C#)</strong>, <strong>UI/UX Verification Usability Auditing</strong>, and <strong>Defensive Frontend Engineering</strong>. My course project architectures (like the TRaDC AR engine or secure login patterns) prove that I can construct interactive systems while concurrently hardcoding input sanitization matrices, parameter filters, and robust regular expression mechanisms into client data workflows.</p>
+            <p>My combination of <strong>3D Application Dev (Unity/C#)</strong>, <strong>UI/UX Verification</strong>, and <strong>Secure Frontend Engineering</strong> maps perfectly to building industrial automation portals and virtual monitoring tools. My academic software deployments (like the TRaDC AR preservation system and defensive input validation logins) prove that I can engineer highly interactive frontends while systematically embedding regex patterns, input handling, and secure data routing rules to block payload vulnerabilities.</p>
           </div>
         </div>
 
         <div class="accordion">
           <button onclick="toggleAcc(this)">What are your strengths and weaknesses? <span>+</span></button>
           <div class="acc-body">
-            <p><strong>Strengths:</strong> Highly disciplined logic structure debugging, professional competency in human-computer interaction flow analysis, and a strict baseline practice of implementing data input controls directly into development scripts.</p>
-            <p><strong>Weaknesses:</strong> My initial experience with physical hardware and infrastructure architecture routing setups was largely theoretical. However, I am systematically neutralizing this knowledge gap through active, hands-on network simulation tracking labs within my CSA30203 coursework, analyzing network encapsulation layers and IP subnet distributions.</p>
+            <p><strong>Strengths:</strong> Strict architectural script parsing logic, professional proficiency in evaluating spatial UI/UX layouts against human-centric criteria, and an unwavering habit of integrating input sanitization bounds during core development loops.</p>
+            <p><strong>Weaknesses:</strong> My exposure to large-scale enterprise network topologies and hardware boundary layers was initially academic. However, I am actively bridging this knowledge gap through the structural subnetwork tracking, IP allocation sheet parsing, and data layer encapsulation models taught in my CSA30203 Special Topics course.</p>
           </div>
         </div>
 
         <div class="accordion">
           <button onclick="toggleAcc(this)">Why should this company choose to hire you over others? <span>+</span></button>
           <div class="acc-body">
-            <p>LGMS Berhad should hire me because I eliminate the friction between feature production and software hardening. Traditional developers construct software blindly without defensive foresight, requiring massive, expensive code rewrites down the pipeline. Conversely, I build secure frameworks by habit. I speak the language of immersive media interfaces, yet view every component through a protective lens—ensuring that systems are not only interactive and highly usable, but natively safe for end-users from the first line of code.</p>
+            <p>Proton Tanjung Malim should choose me because I eliminate the classic vulnerability gap between usability and platform security. While generic developers prioritize operational speed without implementing code defense parameters, I engineer codebases with protective features running natively. I bring an analytical, security-conscious approach to interactive development—ensuring that your automated employee portals and smart warehouse systems remain visually pristine, highly usable, and resilient against security breaches.</p>
           </div>
         </div>
 
@@ -424,9 +423,7 @@
   <div class="modal" id="modal" onclick="closeModal(event)">
     <div class="modal-inner" onclick="event.stopPropagation()">
       <div class="modal-head"><div><h2 id="modalTitle">Project Specs</h2><p id="modalIntro" style="margin-top:4px;"></p></div><button class="x" onclick="closeModal()">Close</button></div>
-      
       <div class="project-image-view" id="modalImageView" title="Click to view image full screen"></div>
-
       <div id="modalBody"></div>
     </div>
   </div>
@@ -505,7 +502,6 @@ function showProject(i){
   
   const imgFrame = document.getElementById('modalImageView');
   if(p.image && p.image.trim() !== "") {
-    // Injected image calls the openLightbox event runtime trigger on user click behavior
     imgFrame.innerHTML = `<img src="${p.image}" alt="${p.title} Artifact View" onclick="openLightbox('${p.image}')">`;
     imgFrame.style.display = "block";
   } else {
@@ -532,7 +528,6 @@ function closeModal(e){
   document.getElementById('modal').classList.remove('open');
 }
 
-/* Lightbox Image Expansion Event Trigger Routers */
 function openLightbox(src) {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImage');
