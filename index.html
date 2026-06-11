@@ -115,30 +115,9 @@
     .project-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
     .filter { padding: 8px 16px; border: 1px solid var(--line); background: transparent; border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 0.86rem; }
     .filter.active { border-color: var(--accent); background: rgba(59, 130, 246, 0.06); color: var(--accent); }
-    .project-card { overflow: hidden; padding: 0; cursor: pointer; display: flex; flex-direction: column; }
+    .project-card { overflow: hidden; padding: 0; cursor: pointer; }
     .project-cover { height: 130px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(168, 85, 247, 0.03)); display: grid; place-items: center; font-size: 2.5rem; border-bottom: 1px solid var(--line); }
-    
-    /* Dedicated Project Image Drop-Zone Styles */
-    .project-image-slot {
-      width: 100%; height: 160px; background: rgba(255, 255, 255, 0.02);
-      border-bottom: 1px solid var(--line); position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .project-image-slot img {
-      width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;
-    }
-    .image-placeholder-text {
-      font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
-      border: 1px dashed rgba(168, 85, 247, 0.4); padding: 8px 14px; border-radius: 4px; pointer-events: none;
-    }
-    .modal-image-slot {
-      width: 100%; height: 280px; background: rgba(255, 255, 255, 0.02);
-      border: 1px dashed var(--line); border-radius: 8px; margin-bottom: 20px;
-      display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;
-    }
-    .modal-image-slot img { width: 100%; height: 100%; object-fit: cover; }
-
-    .project-body { padding: 20px; flex-grow: 1; }
+    .project-body { padding: 20px; }
     .tag { display: inline-block; margin: 4px 4px 4px 0; font-size: 0.74rem; padding: 3px 8px; border-radius: 4px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.12); color: var(--accent); font-weight: 600; }
     
     .skill { margin: 16px 0; }
@@ -151,6 +130,15 @@
     .accordion button:hover { background: rgba(59, 130, 246, 0.02); }
     .acc-body { display: none; padding: 0 18px 18px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid rgba(59, 130, 246, 0.05); padding-top: 14px; }
     .accordion.open .acc-body { display: block; }
+    
+    /* Configured layout styles for inner project media placeholders */
+    .project-image-placeholder {
+      width: 100%; height: 220px; background: var(--panel2); border: 2px dashed var(--line);
+      border-radius: 8px; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; margin-bottom: 20px; color: var(--muted); gap: 8px;
+    }
+    .project-image-placeholder span { font-size: 2.2rem; }
+    .project-image-placeholder p { margin: 0; font-size: 0.84rem; font-weight: 600; }
     
     .modal { position: fixed; inset: 0; background: rgba(3, 2, 9, 0.85); backdrop-filter: blur(8px); z-index: 99; display: none; align-items: center; justify-content: center; padding: 20px; }
     .modal.open { display: flex; }
@@ -171,7 +159,7 @@
       .links { display: none; }
     }
     @media print {
-      .topbar, .hero-actions, .project-toolbar, .tabs, .modal, .project-image-slot { display: none !important; }
+      .topbar, .hero-actions, .project-toolbar, .tabs, .modal { display: none !important; }
       body { background: white; color: #111; }
       .card, .panel, .inline-role-panel { box-shadow: none; border: 1px solid #ccc; background: white; margin-bottom: 20px; page-break-inside: avoid; }
       .tab-content { display: block !important; }
@@ -202,9 +190,9 @@
       <div class="badge">● Course: CSA30203 Special Topics in Computer Network Security</div>
       <h1>Muhammad Aiman Hakimy Bin Azmi</h1>
       <p style="font-size:1.1rem; max-width:820px; color: var(--muted); margin-bottom: 8px;">
-        I am a Bachelor of Information Technology student specializing in Informatics Media[cite: 1, 2]. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication[cite: 1].
-        My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist[cite: 1, 2].
-        I aim to create digital platforms that are usable, accessible, visually effective, and safe for users[cite: 1].
+        I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.
+        My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.
+        I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.
       </p>
       <div class="inline-role-panel">
         <div class="role-details">
@@ -226,13 +214,13 @@
       <div class="grid cols-2">
         <div class="card">
           <h2>About Me</h2>
-          <p>I am a Bachelor of Information Technology student specializing in Informatics Media[cite: 1, 2]. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication[cite: 1].</p>
-          <p>This portfolio presents selected academic works that show how technical, creative, and communication skills can be integrated to produce meaningful digital solutions for education, business, and community use[cite: 1].</p>
+          <p>I am a Bachelor of Information Technology student specializing in Informatics Media. My academic interest focuses on interactive digital media, web-based systems, user interface design, multimedia production, and secure digital communication.</p>
+          <p>This portfolio presents selected academic works that show how technical, creative, and communication skills can be integrated to produce meaningful digital solutions for education, business, and community use.</p>
         </div>
         <div class="card">
           <h2>Career Goal</h2>
-          <p>My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist[cite: 1, 2].</p>
-          <p>I aim to create digital platforms that are usable, accessible, visually effective, and safe for users[cite: 1].</p>
+          <p>My goal is to become a Secure Software Developer or a cybersecurity-aware digital media technologist.</p>
+          <p>I aim to create digital platforms that are usable, accessible, visually effective, and safe for users.</p>
         </div>
       </div>
     </section>
@@ -241,31 +229,31 @@
       <h2>🔍 Career Exploration</h2>
       <div class="panel" style="padding:24px">
         <h3>1. Software Developer (Security-focused)</h3>
-        <p style="margin-bottom: 20px;">Positioning application engineering workflows at the front line of software perimeter and internal code layer defenses[cite: 1].</p>
+        <p style="margin-bottom: 20px;">Positioning application engineering workflows at the front line of software perimeter and internal code layer defenses.</p>
         
         <div class="grid cols-2" style="margin-bottom: 20px;">
           <div class="card" style="background: rgba(255,255,255,0.01)">
             <h4 style="color:var(--accent); margin-top:0;">Job Responsibilities:</h4>
             <ul style="padding-left:20px; margin:0; color:var(--muted);">
-              <li style="margin-bottom:8px;">Reviewing application source code to identify and mitigate software bugs and flaws[cite: 1].</li>
-              <li style="margin-bottom:8px;">Integrating automated security tools directly into the development lifecycle[cite: 1].</li>
-              <li style="margin-bottom:8px;">Ensuring web and mobile digital platforms protect user identity through proper validation protocols[cite: 1].</li>
-              <li>Documenting system architecture vulnerabilities to optimize platform integrity[cite: 1].</li>
+              <li style="margin-bottom:8px;">Reviewing application source code to identify and mitigate software bugs and flaws.</li>
+              <li style="margin-bottom:8px;">Integrating automated security tools directly into the development lifecycle.</li>
+              <li style="margin-bottom:8px;">Ensuring web and mobile digital platforms protect user identity through proper validation protocols.</li>
+              <li>Documenting system architecture vulnerabilities to optimize platform integrity.</li>
             </ul>
           </div>
           <div class="card" style="background: rgba(255,255,255,0.01)">
             <h4 style="color:var(--accent); margin-top:0;">Required Skills:</h4>
             <ul style="padding-left:20px; margin:0; color:var(--muted);">
-              <li style="margin-bottom:8px;">Understanding secure web frameworks and modern development environments[cite: 1].</li>
-              <li style="margin-bottom:8px;">Core competency in web technologies, routing systems, and input filtering logic[cite: 1].</li>
-              <li>Practical understanding of security frameworks, privacy-by-design principles, and basic web vulnerability concepts[cite: 1].</li>
+              <li style="margin-bottom:8px;">Understanding secure web frameworks and modern development environments.</li>
+              <li style="margin-bottom:8px;">Core competency in web technologies, routing systems, and input filtering logic.</li>
+              <li>Practical understanding of security frameworks, privacy-by-design principles, and basic web vulnerability concepts.</li>
             </ul>
           </div>
         </div>
 
         <div class="card" style="background: rgba(255,255,255,0.01); margin-top: 20px;">
           <h4 style="color:var(--accent2); margin-top:0;">Relevance to Modern Cybersecurity:</h4>
-          <p style="margin:0;">Digital media platforms continuously collect, display, and distribute information[cite: 1]. Because modern systems face persistent security threats at the application layer, media technologists need a basic awareness of authentication, data privacy, safe communication, responsible content sharing, and secure web practices to ensure that deployments remain safe for end-users[cite: 1].</p>
+          <p style="margin:0;">Digital media platforms continuously collect, display, and distribute information. Because modern systems face persistent security threats at the application layer, media technologists need a basic awareness of authentication, data privacy, safe communication, responsible content sharing, and secure web practices to ensure that deployments remain safe for end-users.</p>
         </div>
       </div>
     </section>
@@ -292,10 +280,10 @@
             <table>
               <thead><tr><th>Skill</th><th>Evidence Material</th></tr></thead>
               <tbody>
-                <tr><td><strong>Unity & C#</strong></td><td>TraDC AR preservation engine script blocks and gamified logic setups[cite: 1].</td></tr>
-                <tr><td><strong>3D Application Dev</strong></td><td>Low-poly asset mapping and lighting optimization configurations[cite: 1].</td></tr>
-                <tr><td><strong>UI/UX Verification</strong></td><td>High-fidelity functional interaction blueprints and testing frameworks[cite: 1].</td></tr>
-                <tr><td><strong>Security-Focused Dev</strong></td><td>Input validation scripts, form hardening layers, and defensive handlers[cite: 1].</td></tr>
+                <tr><td><strong>Unity & C#</strong></td><td>TraDC AR preservation engine script blocks and gamified logic setups.</td></tr>
+                <tr><td><strong>3D Application Dev</strong></td><td>Low-poly asset mapping and lighting optimization configurations.</td></tr>
+                <tr><td><strong>UI/UX Verification</strong></td><td>High-fidelity functional interaction blueprints and testing frameworks.</td></tr>
+                <tr><td><strong>Security-Focused Dev</strong></td><td>Input validation scripts, form hardening layers, and defensive handlers.</td></tr>
               </tbody>
             </table>
           </div>
@@ -304,12 +292,12 @@
 
       <div id="media" class="tab-content">
         <div class="grid cols-3">
-          <div class="card"><h3>Unity Architecture</h3><p>Implements runtime script compilation, interactive interface states, and event handling within engine pipelines[cite: 1].</p></div>
-          <div class="card"><h3>3D Application Dev</h3><p>Optimizes layout geometry boundaries, 3D low-poly meshes, and texturing logic for immersive interactions[cite: 1].</p></div>
-          <div class="card"><h3>UI/UX Verification</h3><p>Evaluates functional screen flows, wireframes, and interface prototypes against usability metrics[cite: 1].</p></div>
-          <div class="card"><h3>Security-Focused Dev</h3><p>Hardens application interfaces against vulnerability vectors by parsing validation constraints into client routines[cite: 1].</p></div>
-          <div class="card"><h3>Collaborative Practice</h3><p>Deploys distributed tasks cleanly across project groups to integrate networking systems[cite: 1].</p></div>
-          <div class="card"><h3>Problem Solving</h3><p>Applies systematic code refactoring, diagnostics, and debugging cycles to finalize artifacts[cite: 1].</p></div>
+          <div class="card"><h3>Unity Architecture</h3><p>Implements runtime script compilation, interactive interface states, and event handling within engine pipelines.</p></div>
+          <div class="card"><h3>3D Application Dev</h3><p>Optimizes layout geometry boundaries, 3D low-poly meshes, and texturing logic for immersive interactions.</p></div>
+          <div class="card"><h3>UI/UX Verification</h3><p>Evaluates functional screen flows, wireframes, and interface prototypes against usability metrics.</p></div>
+          <div class="card"><h3>Security-Focused Dev</h3><p>Hardens application interfaces against vulnerability vectors by parsing validation constraints into client routines.</p></div>
+          <div class="card"><h3>Collaborative Practice</h3><p>Deploys distributed tasks cleanly across project groups to integrate networking systems.</p></div>
+          <div class="card"><h3>Problem Solving</h3><p>Applies systematic code refactoring, diagnostics, and debugging cycles to finalize artifacts.</p></div>
         </div>
       </div>
 
@@ -323,18 +311,18 @@
             <tbody>
               <tr>
                 <td><strong>3D Application Dev (Unity)</strong></td>
-                <td>Proficient in fundamental client execution logic and custom asset rendering pipelines[cite: 1].</td>
-                <td>Build complex, modular state engines utilizing modern design patterns within interactive frameworks[cite: 1].</td>
+                <td>Proficient in fundamental client execution logic and custom asset rendering pipelines.</td>
+                <td>Build complex, modular state engines utilizing modern design patterns within interactive frameworks.</td>
               </tr>
               <tr>
                 <td><strong>Security-Focused Software Developer</strong></td>
-                <td>Aware of defensive parameters but require deeper structural validation routine metrics[cite: 1].</td>
-                <td>Study advanced input sanitization protocols, data privacy models, and source code auditing patterns[cite: 1].</td>
+                <td>Aware of defensive parameters but require deeper structural validation routine metrics.</td>
+                <td>Study advanced input sanitization protocols, data privacy models, and source code auditing patterns.</td>
               </tr>
               <tr>
                 <td><strong>UI/UX Verification</strong></td>
-                <td>Creating layout prototypes and interactive map parameters using UI suites[cite: 1].</td>
-                <td>Conduct structured usability tests with active consumer arrays to establish analytical performance audits[cite: 1].</td>
+                <td>Creating layout prototypes and interactive map parameters using UI suites.</td>
+                <td>Conduct structured usability tests with active consumer arrays to establish analytical performance audits.</td>
               </tr>
             </tbody>
           </table>
@@ -348,19 +336,19 @@
         <div class="card">
           <h3>🛠️ Future Development Action Plan</h3>
           <ul style="padding-left:20px; color:var(--muted);">
-            <li style="margin-bottom:12px;"><strong>Unity:</strong> Build complex, component-driven interactive applications using state engines[cite: 1].</li>
-            <li style="margin-bottom:12px;"><strong>UI/UX Verification:</strong> Execute objective usability criteria mapping to evaluate spatial interface prototypes[cite: 1].</li>
-            <li style="margin-bottom:12px;"><strong>Security-Focused Dev:</strong> Audit software code loops against common exploit vectors to integrate automated sanitization[cite: 1].</li>
-            <li><strong>3D Application Dev:</strong> Modernize asset rendering efficiency metrics across mobile and web runtime configurations[cite: 1].</li>
+            <li style="margin-bottom:12px;"><strong>Unity:</strong> Build complex, component-driven interactive applications using state engines.</li>
+            <li style="margin-bottom:12px;"><strong>UI/UX Verification:</strong> Execute objective usability criteria mapping to evaluate spatial interface prototypes.</li>
+            <li style="margin-bottom:12px;"><strong>Security-Focused Dev:</strong> Audit software code loops against common exploit vectors to integrate automated sanitization.</li>
+            <li><strong>3D Application Dev:</strong> Modernize asset rendering efficiency metrics across mobile and web runtime configurations.</li>
           </ul>
         </div>
         <div class="card">
           <h3>🗓️ Academic Journey Timeline</h3>
           <div class="timeline">
-            <div class="timeitem"><span class="dot"></span><h4>Year 1: IT Foundation</h4><p class="mini">Developed foundational understanding in programming, computer systems, digital logic, databases, and basic multimedia concepts[cite: 1].</p></div>
-            <div class="timeitem"><span class="dot"></span><h4>Year 2: Media and Application Development</h4><p class="mini">Built web pages, designed user interfaces, produced digital media content, and applied database concepts in small systems[cite: 1].</p></div>
-            <div class="timeitem"><span class="dot"></span><h4>Year 3: Integration and Professional Practice</h4><p class="mini">Integrated media design, networking, cybersecurity awareness, project management, and user-centered evaluation into academic projects[cite: 1].</p></div>
-            <div class="timeitem"><span class="dot"></span><h4>Final Year: Capstone Direction</h4><p class="mini">Prepared to propose a final-year project related to interactive learning media, secure web applications, or digital awareness platforms[cite: 1].</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Year 1: IT Foundation</h4><p class="mini">Developed foundational understanding in programming, computer systems, digital logic, databases, and basic multimedia concepts.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Year 2: Media and Application Development</h4><p class="mini">Built web pages, designed user interfaces, produced digital media content, and applied database concepts in small systems.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Year 3: Integration and Professional Practice</h4><p class="mini">Integrated media design, networking, cybersecurity awareness, project management, and user-centered evaluation into academic projects.</p></div>
+            <div class="timeitem"><span class="dot"></span><h4>Final Year: Capstone Direction</h4><p class="mini">Prepared to propose a final-year project related to interactive learning media, secure web applications, or digital awareness platforms.</p></div>
           </div>
         </div>
       </div>
@@ -369,58 +357,23 @@
     <section id="projects" class="section">
       <h2>📂 Evidence of Learning</h2>
       <h3>Academic Project Gallery</h3>
-      <p>Click an engineering card entry below to audit the structural deployment tools, skill validations, and security reflections[cite: 1].</p>
+      <p>Click an engineering card entry below to audit the structural deployment tools, skill validations, and security reflections.</p>
       
       <div class="project-toolbar">
         <button class="filter active" onclick="filterProjects('all',event)">All Projects</button>
-        <button class="filter" onclick="filterProjects('web',event)">AR & Gamification</button>
+        <button class="filter" onclick="filterProjects('web',event)">Web Platform</button>
         <button class="filter" onclick="filterProjects('ux',event)">UI/UX Architecture</button>
         <button class="filter" onclick="filterProjects('security',event)">Cyber Security</button>
         <button class="filter" onclick="filterProjects('media',event)">Media Analytics</button>
       </div>
 
       <div class="grid cols-3" id="projectGrid">
-        <article class="card project-card" data-cat="web ux" onclick="showProject(0)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert TraDC AR Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>TraDC AR Cultural Preservation Engine</h3><p>An interactive digital preservation application rendering traditional cultural game assets via mobile augmented reality systems.</p><span class="tag">Unity</span><span class="tag">Vuforia AR</span></div>
-        </article>
-        
-        <article class="card project-card" data-cat="web ux" onclick="showProject(1)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert Speed Math Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>2D Speed Math Adventure System</h3><p>A gamified primary school educational application constructed using structured logical progression sets to teach math skills.</p><span class="tag">Logic Arrays</span><span class="tag">Gamification</span></div>
-        </article>
-        
-        <article class="card project-card" data-cat="security" onclick="showProject(2)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert Phishing Campaign Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>Cybersecurity Awareness Campaign</h3><p>Digital campaign materials, training modules, and media assets addressing phishing, passwords, and data privacy.</p><span class="tag">Security</span><span class="tag">Media</span></div>
-        </article>
-        
-        <article class="card project-card" data-cat="ux" onclick="showProject(3)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert Interactive Material Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>Interactive Learning Material</h3><p>Multimedia learning content and instructional data structures developed to train users on fundamental networking layers.</p><span class="tag">MSP</span><span class="tag">Learning</span></div>
-        </article>
-        
-        <article class="card project-card" data-cat="security" onclick="showProject(4)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert Secure Login Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>Secure Input Hardened Interface</h3><p>A form-hardened secure login prototype login page engineered with robust validation and defensive sanitation handlers.</p><span class="tag">Web</span><span class="tag">AppSec</span></div>
-        </article>
-        
-        <article class="card project-card" data-cat="media" onclick="showProject(5)">
-          <div class="project-image-slot">
-            <span class="image-placeholder-text">Insert Dashboard Screenshot Here</span>
-          </div>
-          <div class="project-body"><h3>Kopi Pagi Platform Sales Analytics Dashboard</h3><p>Data tracking pipeline extracting sales metrics, operational parameters, and conversion values from consumer engagement metrics.</p><span class="tag">BI Tracking</span><span class="tag">Data Analytics</span></div>
-        </article>
+        <article class="card project-card" data-cat="web" onclick="showProject(0)"><div class="project-cover">🌐</div><div class="project-body"><h3>Personal Responsive Website</h3><p>A student branding website using HTML, CSS, and JavaScript.</p><span class="tag">Web</span><span class="tag">Responsive</span></div></article>
+        <article class="card project-card" data-cat="ux" onclick="showProject(1)"><div class="project-cover">📱</div><div class="project-body"><h3>UniEvent App Prototype</h3><p>A mobile app prototype for university event discovery.</p><span class="tag">Figma</span><span class="tag">UX</span></div></article>
+        <article class="card project-card" data-cat="security" onclick="showProject(2)"><div class="project-cover">🛡️</div><div class="project-body"><h3>Cybersecurity Awareness Campaign</h3><p>Digital campaign materials on phishing, passwords, and privacy.</p><span class="tag">Security</span><span class="tag">Media</span></div></article>
+        <article class="card project-card" data-cat="security" onclick="showProject(3)"><div class="project-cover">📡</div><div class="project-body"><h3>Data Communication Systems Mapping</h3><p>Academic coursework detailing the mapping of Data Communication models, OSI layers, and TCP/IP protocol suites.</p><span class="tag">Networking</span><span class="tag">OSI Layers</span></div></article>
+        <article class="card project-card" data-cat="web security" onclick="showProject(4)"><div class="project-cover">🔐</div><div class="project-body"><h3>Secure Login Interface</h3><p>A prototype login page with usability & security features.</p><span class="tag">Web</span><span class="tag">Security</span></div></article>
+        <article class="card project-card" data-cat="ux web" onclick="showProject(5)"><div class="project-cover">🏝️</div><div class="project-body"><h3>Forgotten Island Exploration Sandbox</h3><p>An interactive 3D platform sandbox rendering structural environment meshes, transparency mapping, and customized asset positioning coordinates.</p><span class="tag">Blender</span><span class="tag">3D Assets</span></div></article>
       </div>
     </section>
 
@@ -430,19 +383,19 @@
         <div class="accordion open">
           <button onclick="toggleAcc(this)">Why do you want to work for your chosen company and what value can you bring? <span>+</span></button>
           <div class="acc-body">
-            <p>Project work has systematically improved my ability to plan, design, test, and refine digital artifacts while connecting classroom theories with practical development tasks[cite: 1]. Bringing this structural mindset to a company lets me bridge creative design and functional system development, ensuring engineered products remain engaging and secure[cite: 1].</p>
+            <p>Project work has systematically improved my ability to plan, design, test, and refine digital artifacts while connecting classroom theories with practical development tasks. Bringing this structural mindset to a company lets me bridge creative design and functional system development, ensuring engineered products remain engaging and secure.</p>
           </div>
         </div>
         <div class="accordion">
           <button onclick="toggleAcc(this)">What skills make you suitable for this job? <span>+</span></button>
           <div class="acc-body">
-            <p>My academic background directly combines technology, design, communication, and user experience[cite: 1]. Because I recognize that a great digital product must function correctly, look appealing, and protect data, I bring a well-rounded approach to building and vetting customer-facing digital applications[cite: 1].</p>
+            <p>My academic background directly combines technology, design, communication, and user experience. Because I recognize that a great digital product must function correctly, look appealing, and protect data, I bring a well-rounded approach to building and vetting customer-facing digital applications.</p>
           </div>
         </div>
         <div class="accordion">
           <button onclick="toggleAcc(this)">Why would a company choose to hire you? <span>+</span></button>
           <div class="acc-body">
-            <p>Unlike traditional developers who focus entirely on system logic or designers who focus solely on interface aesthetics, I target the intersection of both fields[cite: 1]. I configure clean interfaces, maintain clear communication across project teams, and apply continuous iterative updates to elevate software usability and user safety[cite: 1].</p>
+            <p>Unlike traditional developers who focus entirely on system logic or designers who focus solely on interface aesthetics, I target the intersection of both fields. I configure clean interfaces, maintain clear communication across project teams, and apply continuous iterative updates to elevate software usability and user safety.</p>
           </div>
         </div>
       </div>
@@ -458,17 +411,17 @@
 
   <footer class="footer">
     <p class="print-note">Official Verification Print Document // CSA30203 Academic Assessment.</p>
-    <p>Individual e-Portfolio compiled by Muhammad Aiman Hakimy Bin Azmi for Bachelor of Information Technology (Informatics Media)[cite: 1, 2]. Designed to fulfill the 20% grading specifications required under Dr. Nazirah[cite: 1].</p>
+    <p>Individual e-Portfolio compiled by Muhammad Aiman Hakimy Bin Azmi for Bachelor of Information Technology (Informatics Media). Designed to fulfill the 20% grading specifications required under Dr. Nazirah.</p>
   </footer>
 
 <script>
 const projects = [
-  {title:'TraDC AR Cultural Preservation Engine',intro:'An interactive digital preservation application rendering traditional cultural game assets via mobile augmented reality systems.',tools:'Unity Engine, Vuforia SDK, Blender 3D, C# Scripting Matrices',skills:'AR target alignment, 3D mesh optimization, runtime logic event handlers tracking',evidence:'Low-poly asset meshes, interactive target mapping layouts, code module logs',reflection:'This project validated my ability to process complex 3D tracking assets. I optimized geometry thresholds to preserve fast rendering speeds on mobile endpoints while ensuring script events executed reliably.'},
-  {title:'2D Speed Math Adventure System',intro:'A gamified primary school educational application constructed using structured logical progression sets to teach math skills.',tools:'HTML5 Canvas, Vanilla Javascript Engine, CSS3, Vector Suites',skills:'HCI principles design, game logic arrays, client state persistence workflows',evidence:'Dynamic state mechanics codebase, vector asset mockups, canvas rendering logs',reflection:'I discovered that interface structures must adjust dynamically to human input patterns. This taught me to decouple core game logic states from visual rendering routines to maintain stable execution cycles.'},
-  {title:'Cybersecurity Awareness Campaign',intro:'Digital campaign materials, training modules, and media assets addressing phishing, passwords, and data privacy.',tools:'Adobe Creative Suite, Google Workspace Platforms, CapCut Production Engine',skills:'Vulnerability simplification, secure asset layout configuration, technical communications flow',evidence:'Phishing mitigation structural maps, threat vector infographics, active deployment microsites',reflection:'Translated application and database risks into visual layouts, training network endpoints to spot system injection anomalies and social engineering vectors.'},
-  {title:'Interactive Learning Material',intro:'Multimedia learning content and instructional data structures developed to train users on fundamental networking layers.',tools:'H5P Integration Suites, Interactive Canvas Frameworks, PowerPoint Core Matrix',skills:'Instructional content mapping, networking topologies tracking, layer-by-layer interaction logic',evidence:'Interactive modules schema, network blueprint visualizations, evaluation log logs',reflection:'Balanced asset delivery with content clarity. Configured structured interaction elements to systematically guide users through standard networking layers and packet boundaries.'},
-  {title:'Secure Input Hardened Interface',intro:'A form-hardened secure login prototype login page engineered with robust validation and defensive sanitation handlers.',tools:'HTML5 Forms, regular expression libraries, custom sanitization scripts',skills:'Input constraint enforcement, client-side data filtering, security boundary validation scripts',evidence:'Regular expression validation configurations, error parsing viewports, sanitized payload inputs',reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.'},
-  {title:'Kopi Pagi Platform Sales Analytics Dashboard',intro:'Data tracking pipeline extracting sales metrics, operational parameters, and conversion values from consumer engagement metrics.',tools:'Gumroad Data Pipeline, Microsoft Power BI, Excel Arrays, Visual Suite templates',skills:'Data pipeline extraction, metric conversion tracking, interface dashboard structural layout',evidence:'Power BI report interfaces, relational schema maps, operational metric outputs',reflection:'Refined the skill of converting log data into actionable security dashboard views, allowing engineers to audit application traffic trends over time.'}
+  {title:'Personal Responsive Website',intro:'A student branding website using HTML, CSS, and JavaScript.',tools:'HTML5, CSS3, Vanilla JS Engine',skills:'Responsive layouts, modular styling structure, cross-viewport layout rendering',evidence:'Deployment root folder, responsive mobile view configurations, asset sheets',reflection:'Strengthened understanding of responsive frameworks. Integrated decoupled structural code matrices to optimize parsing and render times across target mobile environments.'},
+  {title:'UniEvent App Prototype',intro:'A mobile app prototype for university event discovery.',tools:'Figma UX Engine, Vector Asset Frameworks',skills:'Wireframing, functional interaction blueprints, accessibility user flows mapping',evidence:'High-fidelity prototype viewports, task matrices, design asset components',reflection:'Validated that modern interface designs must balance appearance with clear user flows, making sure navigation items stay secure and intuitive.'},
+  {title:'Cybersecurity Awareness Campaign',intro:'Digital campaign materials on phishing, passwords, and privacy.',tools:'Adobe Illustrator, Graphic Design Templates, CapCut Engine',skills:'Vulnerability simplification, secure operations layout, technical communication execution',evidence:'Phishing mitigation maps, threat vector infographics, active deployment links',reflection:'Translated application and database risks into visual layouts, training network endpoints to spot system injection anomalies and social engineering vectors.'},
+  {title:'Data Communication Systems Mapping',intro:'Academic coursework detailing the mapping of Data Communication models, OSI layers, and TCP/IP protocol suites.',tools:'Cisco Packet Tracer, Network Mapping Engines',skills:'Topological mapping design, multiplexing logic structure, OSI layer boundary evaluation, subnetwork analysis',evidence:'Network routing architecture maps, subnetwork IP sheets, logical pathway structural data grids',reflection:'Collaborating with project team members (Wali, Syahmi, Bad, Qil) clarified architectural dependencies. We mapped discrete logical resource barriers to prevent lateral privilege escalations across data communication systems.'},
+  {title:'Secure Login Interface',intro:'A prototype login page with usability & security features.',tools:'HTML5 Forms, Javascript Input Sanitization, Defensive Patterns',skills:'Input hardening mechanics, password payload defense mapping, defensive sanitization scripts',evidence:'Regular expression validation script arrays, secure error handling viewports, form parameters',reflection:'Ensured login forms are protected against unexpected input values, preventing typical database payload injection attacks before processing inputs.'},
+  {title:'Forgotten Island Exploration Sandbox',intro:'An interactive 3D platform sandbox rendering structural environment meshes, transparency mapping, and customized asset positioning coordinates.',tools:'Unity Engine, Blender 3D, Substance Painter, C# Logic Modules',skills:'3D vertex manipulation, texture transparency mapping, HDRI rendering environments coordination, collision array validation',evidence:'Low-poly environmental wireframes, asset hierarchy logs, transparent texture map files',reflection:'Refined my 3D execution workflow by resolving rendering overlaps and asset boundary intersections. Handled custom transparency maps and layout boundaries to stabilize engine rendering loads without losing visual fidelity.'}
 ];
 
 function toggleTheme(){
@@ -494,8 +447,9 @@ function showProject(i){
   document.getElementById('modalTitle').textContent=p.title;
   document.getElementById('modalIntro').textContent=p.intro;
   document.getElementById('modalBody').innerHTML=`
-    <div class="modal-image-slot">
-      <span class="image-placeholder-text">Insert ${p.title} Mockup Here</span>
+    <div class="project-image-placeholder">
+      <span>🖼️</span>
+      <p>Click to Upload or Paste ${p.title} Asset Image Here</p>
     </div>
     <table>
       <thead>
